@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Dominion Systems A Parent of Landmark Technologies.</h1>
+<h1 align="center">Welcome To Landmark Technologies.</h1>
 <h2 align="center"> We are supporting a Paypal Webapp Project.
 	Landmark Technologies is a software development company. 
 	Class28 will run from April 9, 2022 - October 20, 2022
