@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-paypal2-webapp</finalName>
+		<finalName>paypal2-webapp</finalName>
 		
 		<plugins>
 			<plugin>
