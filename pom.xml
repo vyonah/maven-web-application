@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.8</version>
+	<version>0.0.9</version>
 	<!-- <version>0.0.7-SNAPSHOT</version> -->
 	
 	<name>maven-web-application</name>
@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-paypal3-web-app</finalName>
+		<finalName>maven-paypal2-webapp</finalName>
 		
 		<plugins>
 			<plugin>
