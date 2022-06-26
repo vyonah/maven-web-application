@@ -1,41 +1,37 @@
-node {
-  def mavenHome = tool name: 'maven3.8.2'
-  stage('1-Clone') {
-    git credentialsId: 'GitHUB-CREDENTIALS', url: 'https://github.com/Landmark-Technologies/maven-web-application' 
+node{
+ def mavenHome = tool name: 'maven3.8.6'   
+ stage('1cloneCode'){
+    sh "echo running a software build and deployment project for payPal"
+    git "https://github.com/DominionSystemsInc/maven-web-application"
+    //sh "git clone https://github.com/DominionSystemsInc/maven-web-application"
+    //bat "git clone https://github.com/DominionSystemsInc/maven-web-application"
+ } 
+ stage('2Test&Build'){
+    sh "${mavenHome}/bin/mvn install"
+ } 
+ stage('3CodeQuality'){
+  sh "${mavenHome}/bin/mvn sonar:sonar"
+ }   
+ stage('4UploadArtifacts'){
+  sh "${mavenHome}/bin/mvn deploy"
+ } 
+   stage('5deploy_uat'){
+    //sh "scp "
+    deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://54.236.45.122:8080/')], contextPath: null, war: 'target/*war'
   }
-  stage('2-mavenBuild') {
-     sh "${mavenHome}/bin/mvn clean package"
-  }
-  /*
-  stage('3-CodeQuality') {
-     sh "${mavenHome}/bin/mvn sonar:sonar"
-  }
-  stage('4-UploadArticats') {
-    sh "${mavenHome}/bin/mvn deploy"
-  }
- 
-  stage('5-Deploy-UAT') {
-    deploy adapters: [tomcat9(credentialsId: 'deploy', path: '', url: 'http://54.204.83.221:8000/')], contextPath: null, war: 'target/*.war'
-  }
-  stage('6-EmailN') {
-    emailext body: '''Hello Everyone,
-
-Build from Ebay pipeline project.
-
-Landmark Tecxhnologies''', subject: 'Build status', to: 'developers'
-  }
-  stage('Approval'){
-    timeout(time:8, unit: 'HOURS' ) {
-      input message: 'Please verify and approve'
+  stage('6Approval'){
+    timeout(time:9, unit:'HOURS') {
+        input message: 'PayPal application ready for deployment, Please review and approve'
     }
+ }
+ stage('7deploy_prod'){
+     deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://54.236.45.122:8080/')], contextPath: null, war: 'target/*war'
+ }
+ stage('8Notification'){
+    // Pipeline Syntax 
+    emailext body: '''Build status for frontend PayPal web application.
 
-  }
-  stage('prod-Deploy'){
-     deploy adapters: [tomcat9(credentialsId: 'deploy', path: '', url: 'http://54.204.83.221:8000/')], contextPath: null, war: 'target/*.war'
-  }
-  */
-  
-  /*
-  */
-
+Regards,
+Dominion Systems Inc.''', recipientProviders: [contributor(), developers(), buildUser()], subject: 'PayPal Build Status', to: 'blekizito@gmail.com'
+ }
 }
