@@ -9,6 +9,7 @@ node{
  stage('2Test&Build'){
     sh "${mavenHome}/bin/mvn install"
  } 
+ /*
  stage('3CodeQuality'){
   sh "${mavenHome}/bin/mvn sonar:sonar"
  }   
@@ -17,7 +18,7 @@ node{
  } 
    stage('5deploy_uat'){
     //sh "scp "
-    deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://54.236.45.122:8080/')], contextPath: null, war: 'target/*war'
+    deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://35.174.213.124:8080/')], contextPath: null, war: 'target/*war'
   }
   stage('6Approval'){
     timeout(time:9, unit:'HOURS') {
@@ -25,7 +26,7 @@ node{
     }
  }
  stage('7deploy_prod'){
-     deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://54.236.45.122:8080/')], contextPath: null, war: 'target/*war'
+     deploy adapters: [tomcat9(credentialsId: 'Tomcat7Credential', path: '', url: 'http://35.174.213.124:8080/')], contextPath: null, war: 'target/*war'
  }
  stage('8Notification'){
     // Pipeline Syntax 
@@ -34,4 +35,5 @@ node{
 Regards,
 Dominion Systems Inc.''', recipientProviders: [contributor(), developers(), buildUser()], subject: 'PayPal Build Status', to: 'blekizito@gmail.com'
  }
-}
+*/
+} 
