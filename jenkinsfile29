@@ -1,0 +1,32 @@
+node {
+  def mavenHome = tool name: 'maven3.8.6'
+	stage('1Gitclone') {
+	  git credentialsId: 'git-credentials', url: 'https://github.com/jawsdevops/maven-web-application'
+	}
+	stage('2Mavenbuild') {
+	  sh "${mavenHome}/bin/mvn install"
+	}
+/*
+	stage('3CodeQuality') {
+	  sh "${mavenHome}/bin/mvn sonar:sonar"
+	}
+	stage('4UploadArtifact') {
+	  sh "${mavenHome}/bin/mvn deploy"
+	}
+	stage('5Deloy_UAT') {
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-redentials', path: '', url: 'http://52.91.175.167:8080/manager/html')], contextPath: null, war: 'target/*war'
+	}
+	stage('6Approval') {
+	  timeout(time:9, unit: 'MINUTES') {
+	    input message: 'Application ready form deployment. Please revie and approve'
+	  }
+	}
+*/
+	stage('7Deplly_Prod') {
+	  deploy adapters: [tomcat9(credentialsId: 'tomcat-redentials', path: '', url: 'http://52.91.175.167:8080/manager/html')], contextPath: null, war: 'target/*war'
+	}
+	stage('8EmailNotification') {
+    emailext body: '''Build status for frontend application
+Regards''', recipientProviders: [developers(), buildUser(), contributor()], subject: 'Build Status', to: 'jjawsdevops@gmail.com'
+	}
+} 
