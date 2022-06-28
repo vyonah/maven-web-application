@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Landmark Technologies.</h1>
+<h1 align="center">Welcome to Landmark Technologie.</h1>
 <h1 align="center"> This is a test. if you can see this it means i was able to complete github webhook intergration with Jenkins.
 	           I am working to be a 1m millionaires by 2024.
 	this had been pushed from vscode to github. webhook from jenkins picks this up and autmates the build untill tomcat.</h1>
