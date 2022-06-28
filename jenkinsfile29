@@ -21,10 +21,10 @@ node {
 	    input message: 'Application ready form deployment. Please revie and approve'
 	  }
 	}
-*/
 	stage('7Deplly_Prod') {
 	  deploy adapters: [tomcat9(credentialsId: 'tomcat-redentials', path: '', url: 'http://52.91.175.167:8080/manager/html')], contextPath: null, war: 'target/*war'
 	}
+*/
 	stage('8EmailNotification') {
     emailext body: '''Build status for frontend application
 Regards''', recipientProviders: [developers(), buildUser(), contributor()], subject: 'Build Status', to: 'jjawsdevops@gmail.com'
