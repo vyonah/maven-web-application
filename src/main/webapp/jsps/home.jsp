@@ -12,7 +12,7 @@
 <h1 align="center">Welcome to Landmark Technologies.</h1>
 <h1 align="center"> This is a test. if you can see this it means i was able to complete github webhook intergration with Jenkins.
 	           I am working to be a 1m millionaires by 2024.
-	We offer  Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h1>
+	this had been pushed from vscode to github. webhook from jenkins picks this up and autmates the build untill tomcat.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
