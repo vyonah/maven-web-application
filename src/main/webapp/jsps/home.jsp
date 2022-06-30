@@ -10,9 +10,12 @@
 </head>
 <body>
 <h1 align="center">Welcome to Landmark Technologie.</h1>
-<h1 align="center"> This is a test.. if you can see this. it means i was able to complete github webhook intergration with Jenkins.
-	           I am working to be a millionaire by 2024.
-	this had been pushed from vscode to github. webhook from jenkins picks this up and autmates the build until tomcat.</h1>
+<h1 align="center"> I am working hard on this. I Need to implement CAR. 
+				C= Consistency
+				A= Accountability
+				R= Respectful
+	            I am aiming for 15K weekly by september 3.
+	I know with God by my side this is very possible to accomplish. Hardwork will always pay off. Lenon is a DevOps Engineer.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
