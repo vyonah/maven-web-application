@@ -11,7 +11,7 @@
 <body>
 <h1 align="center">Welcome to Landmark Technologie.</h1>
 <h1 align="center"> I am working hard on this. I Need to implement CAR. 
-				C= Consistency
+				C= Consistency.
 				A= Accountability
 				R= Respectful
 	            I am aiming for 15K weekly by september 3.
