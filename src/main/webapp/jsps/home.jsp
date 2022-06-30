@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Landmark Technologie.</h1>
-<h1 align="center"> I am working hard on this. I Need to implement CAR. 
+<h1 align="center"> I am really  working hard on this. I Need to implement CAR. 
 				C= Consistency.
 				A= Accountability
 				R= Respectful
