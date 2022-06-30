@@ -15,7 +15,7 @@
 				A= Accountability
 				R= Respectful
 	            I am aiming for 15K weekly by september 3.
-	I know with God by my side this is very possible to accomplish. Hardwork will always pay off. Lenon is a DevOps Engineer.</h1>
+	I know with God by my side this is very possible  and easy to accomplish. Hardwork will always pay off. Lenon is a DevOps Engineer.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
