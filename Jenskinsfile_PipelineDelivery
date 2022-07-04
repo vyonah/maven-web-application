@@ -1,0 +1,43 @@
+pipeline{
+    agent any
+    tools{
+        maven "Maven_3.8.6"
+    }
+    stages{
+        stage('ClonefromGitHub'){
+            steps{
+                sh "echo 'change in code noticed.. cloning once more' "
+                git "https://github.com/lnformbu/maven-web-application.git"
+            }
+        }
+        stage('Build'){
+            steps{
+                sh "mvn clean install"
+            }
+        }
+        stage('CodeQualityAnalysis'){
+            steps{
+                sh "mvn clean sonar:sonar"
+            }
+        }
+        stage('BackupArtifacts'){
+            steps{
+                sh "mvn clean deploy"
+            }
+        }
+        stage('Authourization'){
+            steps{
+               timeout(time: 48, unit: 'HOURS'){
+                // some block
+                input message: 'Approve or Decline'
+               }
+            }
+        }
+        stage('6* tomcatdeploy'){
+            steps{
+                sh "echo this is ready for tomcat"
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://18.232.174.240:8080/')], contextPath: null, war: 'target/*war'
+            }
+        }
+    }
+}
