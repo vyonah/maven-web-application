@@ -155,8 +155,18 @@ Ip a = 8080
 
  sudo sh /opt/tomcat/bin/catalina.sh start  
 issues:
-        put comments:
-vi /opt/tomcat9/webapps/manager/META-INF/context.xml
+
+
+Do the following.
+1.  vi /opt/tomcat9/webapps/manager/META-INF/context.xml
+ find Valve class and put comment.
+
+2.To set your username and password Do the following:  
+- vi /opt/tomcat9/conf/tomcat-users.xml 
+	• Update this : above the </tomcat-users>  in the script. 
+<user username="lenon" password="class28" roles="manager-gui,admin-gui, manager-script"/> 
+  <user username="admin" password="class28" roles="admin-gui"/>  
+
 add users:
 vi 
 *********************************************************************************************
