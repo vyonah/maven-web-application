@@ -1,0 +1,217 @@
+Use this as a precheck for Jenkis intergration. 
+sudo yum install java-11-openjdk-devel -y  :
+https://stackoverflow.com/questions/42102657/bash-terminal-colors-in-integrated-terminal-in-vs-code :
+<<start 
+  This will help with jenkins intergration once installed and configured
+  se this as a check list to test your configurations
+  git,Nexus, Sonar, tomacat and Jenkins must have been installed and configured
+  start 
+
+####################################################################################################
+#Jenkins-Git/Github Integration  Jenkins-Git/Github Integration  Jenkins-Git/Github Integration
+####################################################################################################
+
+<<note 
+***
+clone each material from proff to you repo and always work from there on.
+no worries for this will not change proff's code on his end. 
+always commit and save changes.
+link is
+https://github.com/LandmakTechnology
+***
+note
+
+so far i have cloned:
+  1. package-management-tools
+  2. MWA
+  3. MEA
+  4. MSA
+
+INSTALL GIT in Jenkins server or Configure git plugin in Jenkins :
+ if prvite repo / Create credentials to access code in Guthub
+     Jenkins should be authorised to clone/pull code :
+
+# we will revisit git after we have forked all the above. 
+ In Nexus - jenkins - Sonar. 
+
+
+
+####################################################################################################
+#Nexus <---> jenkins Integration; Nexus <---> jenkins Integration; Nexus <---> jenkins Integration; 
+####################################################################################################
+
+mvn deploy: [our build Artifact]
+start / Start /check process for Nexus:
+sudo systemctl stop nexus
+sudo systemctl status nexus
+ps -ef | grep nexus
+curl -v localhost:8081
+curl ident.me
+!
+run nexus on browser. loging :
+Ip a = 8081 
+default login { admin / admin123 } :
+Create repos in nexus-UI to upload artifacts
+remote report [snaphot & release] : 
+     # [grab your links and update your project POM {in your repor forked above in git}]:
+        #edit the <distributionManagement> tag &  #commit changes after.
+
+http://3.89.183.37:8081/repository/certQart-release/
+http://3.89.183.37:8081/repository/certQart-snapshot/
+
+configure nexus ip in jenkins [maven] :
+sudo vim cat ls /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_3.8.6/conf/settings.xml
+<server>
+  <id>nexus</id>
+  <username>admin</username>
+  <password>admin123</password>
+</server> 
+
+<<NexusTroubleshooting-NexusTroubleshooting
+
+*********************************************************************************************
+##nexus service is not starting?
+***
+restart nexus service is need be :
+sudo systemctl stop nexus
+sudo systemctl start nexus
+sudo systemctl status nexus
+
+a)make sure  to change th ownership and group 
+    # This should match the user you installed under
+    #/opt/nexus and /opt/sonatype-work directories 
+    #and permissions (775) for nexus user.
+    command :
+sudo chmod -R 775 /opt/nexus
+sudo chmod -R 775 /opt/sonatype-work
+***
+b)make sure you are trying to start nexus service AS nexus user.
+# This should match the user you installed under
+su - [to user] then run command once more
+***
+c)check java is installed or not using java -version command.
+***
+java -version
+sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
+***
+d) check the nexus.log file which is availabe in 
+ /opt/sonatype-work/nexus3/log  directory.
+***
+Unable to access nexus URL? :
+-------------------------------------
+a) make sure port 8081 is opened in security groups in AWS ec2 instance. 
+***
+cat cat /opt/nexus/etc/nexus-default.properties
+    confirm port application-port=8081 :
+
+*********************************************************************************************
+NexusTroubleshooting-NexusTroubleshooting
+
+####################################################################################################
+#Sonar <---> jenkins Integration; Sonar <---> jenkins Integration; Sonar <---> jenkins Integration;
+####################################################################################################
+
+start /status / check process for Sonar: 
+sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+ps -ef | grep sonarqube
+#
+curl -v localhost:9000
+#
+curl ident.me
+#
+run nexus on browser. loging :
+Ip a = 9000 
+   default login { admin / admin } :
+Updating pom.xml file in git with our sonar url & login :
+      https://github.com/lnformbu/MWA/blob/main/
+    update the <properties> tag
+        <sonar.host.url> 
+        <sonar.login>
+
+***
+<<sonarTroubleshooting-sonarTroubleshooting
+
+Make sure you have switched to the new sonar user you
+created before you can start sonar. DO not start as root
+
+sonarTroubleshooting-sonarTroubleshooting
+***
+####################################################################################################
+#TOMCAT-JENKINS INTEGRATION TOMCAT-JENKINS INTEGRATION TOMCAT-JENKINS INTEGRATION TOMCAT-JENKINS INTEGRATION
+####################################################################################################
+
+enable/ start /Start tomcat:
+sh /opt/tomcat9/bin/startup.sh
+sudo starttomcat
+curl -v localhost:8080
+#
+ps -ef | grep tomcat
+#
+curl ident.me
+#
+run tomcat on browser :
+Ip a = 8080 
+
+ sudo sh /opt/tomcat/bin/catalina.sh start  
+issues:
+
+
+Do the following.
+1.  vi /opt/tomcat9/webapps/manager/META-INF/context.xml
+ find Valve class and put comment.
+
+2.To set your username and password Do the following:  
+- vi /opt/tomcat9/conf/tomcat-users.xml 
+	• Update this : above the </tomcat-users>  in the script. 
+<user username="lenon" password="class28" roles="manager-gui,admin-gui, manager-script"/> 
+  <user username="admin" password="class28" roles="admin-gui"/>  
+
+add users:
+vi 
+*********************************************************************************************
+
+####################################################################################################
+#JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINSJENKINS
+####################################################################################################
+*********************************************************************************************
+enable/ start /Start Jenkins:
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+curl -v localhost:8080
+curl ident.me
+#
+!
+sudo systemctl restart jenkins
+run jenkins on browser :
+Ip a = 8080 
+
+configure nexus ip in jenkins [maven] :
+sudo vim  /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_3.8.6/conf/settings.xml
+<server>
+  <id>nexus</id>
+  <username>admin</username>
+  <password>admin123</password>
+</server> 
+
+<<NexusTroubleshooting-NexusTroubleshooting
+
+if you lost your login:
+    In config. xml , set disableSignup to false .
+    Restart Jenkins.
+    Go to the Jenkins web page and sign up with a new user.
+    In config. ...
+    If it's a private server, set disableSignup back to true in config. ...
+    Restart Jenkins.
+    Go to the Jenkins web page and log in as the new user.
+    Reset the password of the original user.
+    
+jenkinsTroubleshooting-jenkinsTroubleshooting
+
+*********************************************************************************************
+
+####################################################################################################
+#JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINS-JENKINSJENKINS
+####################################################################################################
+*********************************************************************************************

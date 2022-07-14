@@ -9,10 +9,13 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Landmark Technologies.</h1>
-<h1 align="center">We are developing and supporting quality  Software Solutions to millions of clients.
-	           We are raising over 1m millionaires by 2030.
-	We offer  Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h1>
+<h1 align="center">Welcome to Landmark Technologie.</h1>
+<h1 align="center"> I am really  working hard on this. I Need to implement CAR. 
+				C= Consistency.
+				A= Accountability
+				R= Respectful
+	            I am aiming for 15K weekly by september 3.
+	I know with God by my side this is very possible  and easy to accomplish. Hardwork will always pay off. Lenon is a DevOps Engineer.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
