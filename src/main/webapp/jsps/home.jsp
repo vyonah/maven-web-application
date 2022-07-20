@@ -9,8 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Landmark Software Solutions based in Canada. </h1>
-<h1 align="center">We are developing and supporting quality  Software Solutions to millions of clients all over the world. we aim to be the best in the market.
+
 	We offer  Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h1>
 <hr>
 <br>
