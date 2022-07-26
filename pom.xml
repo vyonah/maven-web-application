@@ -94,10 +94,9 @@
 	</dependencies>
 	<distributionManagement>
 	    <repository>
-	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://100.26.133.141:8081/repository/paypal-releases/</url>
-	    </repository>
+      <id>Nexus2</id>
+      <url>http://34.201.39.154:2000/content/repositories/Nexus2</url>
+      </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
