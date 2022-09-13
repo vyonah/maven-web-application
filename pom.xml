@@ -95,13 +95,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
+	      <name>art-release-repo</name>
 	      <url>http://67.202.56.99:8081/repository/art-release-repo/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+	      <name>art-snapshot-repo</name>
 	      <url>http://67.202.56.99:8081/repository/art-snapshot-repo/</url>
 	    </snapshotRepository>
 	    
