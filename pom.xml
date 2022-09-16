@@ -22,7 +22,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http:35.183.204.176:9000/</sonar.host.url>
+		<sonar.host.url>http://99.79.46.240:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -96,20 +96,20 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://35.182.254.37:8081/MiddeyKonsults/repository/visa-fe-releases/</url>
+	      <url>http://99.79.9.189:8081/MiddeyKonsults/repository/boa-releases/</url>
 	    </repository>
 	    
 		
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://35.182.254.37:8081/MiddeyKonsults/repository/visa-fe-snapshots/</url>
+	      <url>http://99.79.9.189:8081/MiddeyKonsults/repository/boa-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>boa-app</finalName>
 		
 		<plugins>
 			<plugin>
