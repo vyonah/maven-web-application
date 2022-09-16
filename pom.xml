@@ -102,7 +102,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://44.211.153.0:8081/repository/visa-fe-snapshots/</url>
+	      <url>http://44.211.153.0:8081/repository/automation-app-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
