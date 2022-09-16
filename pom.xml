@@ -8,7 +8,7 @@
 	
 	<version>0.0.1-SNAPSHOT</version> 
 	
-	<name>maven-web-application</name>
+	<name>automation-app</name>
 
 	<description>Maven Web Project for Java Project</description>
 
@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>automation-app</finalName>
 		
 		<plugins>
 			<plugin>
