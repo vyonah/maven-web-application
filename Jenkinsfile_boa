@@ -60,4 +60,4 @@ MiddeyKonsults
 +1 647 000 000''', recipientProviders: [buildUser(), developers(), contributor(), upstreamDevelopers()], subject: 'success', to: 'boa-team@gmail.com'     
 }
   }  
-
+}
