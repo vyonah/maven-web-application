@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.0.3</version> 
+	<version>0.0.1</version> 
 	
 	<name>maven-web-application</name>
 
@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>hillztest</finalName>
+		<finalName>hillztest2</finalName>
 		
 		<plugins>
 			<plugin>
