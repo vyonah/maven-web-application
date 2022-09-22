@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>hillztest2</finalName>
+		<finalName>hillztestjk</finalName>
 		
 		<plugins>
 			<plugin>
