@@ -24,7 +24,7 @@ node{
       }
   }
   
-  tage('8emailNotification'){
+/*  tage('8emailNotification'){
 emailext body: '''Hello,
 
 Hope this message finds you well.
@@ -33,5 +33,6 @@ Please check build output.
 Thank you,
 Landmark Tenchonogies''', recipientProviders: [developers(), upstreamDevelopers(), contributor(), buildUser()], subject: 'Build Status', to: 'nelmaoraclenotes@gmail.com'
 }
+*/
 }
   
