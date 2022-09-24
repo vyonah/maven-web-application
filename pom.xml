@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	
 
-	<version>0.0.2</version> 
+	<version>0.0.1</version> 
 
 	
 	<name>maven-web-application</name>
@@ -111,7 +111,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>hillztesting</finalName>
+		<finalName>mavenapp</finalName>
 		
 		<plugins>
 			<plugin>
