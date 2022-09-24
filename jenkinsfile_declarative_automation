@@ -1,0 +1,29 @@
+	//options {}
+	post {
+	//use pipeline syntax here for post build actions
+	always{
+	emailext body: '''All,
+	
+	Notification of attempted build and deployment for automation-app.
+	
+	Thanks,
+	CJ''', recipientProviders: [contributor(), buildUser()], subject: 'Build Success', to: 'cej.okafor@gmail.com'
+	}
+	success{
+	emailext body: '''All,
+	
+	Notification of successful build and deployment for automation-app.
+	
+	Thanks,
+	CJ''', recipientProviders: [contributor(), buildUser()], subject: 'Build Success', to: 'cej.okafor@gmail.com'
+	}
+	failure{
+	emailext body: '''All,
+	
+	Notification of failed build and deployment for automation-app. Please investigate.
+	
+	Thanks,
+	CJ''', recipientProviders: [contributor(), buildUser()], subject: 'Build Success', to: 'cej.okafor@gmail.com'
+	}
+	}
+}
