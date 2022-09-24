@@ -23,6 +23,19 @@ stage('2Test&Build'){
    timeout(time:5, unit:"HOURS") {
    input message: 'App ready for deployment, kindly review and approve if all is well' }
 }
+  stage('7deploy2Prod'){
+  sh "sleep 50"
+deploy adapters: [tomcat9(credentialsId: 'cj_tomcat_credentials', path: '', url: 'http://54.210.190.27:8080/')], contextPath: null, war: 'target/*war'
+}
+  stage('8emailNotification'){
+emailext body: '''Hi,
+
+Email provides status on latest build.
+
+Thanks,
+CJ''', recipientProviders: [contributor(), developers()], subject: 'Build Status', to: 'cej.okafor@gmail.com'
+}
+
 /*
   stage('7deploy2Prod'){}
   stage('8emailNotification'){}
