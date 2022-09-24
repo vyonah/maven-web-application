@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.0.1-SNAPSHOT</version> 
+	<version>0.0.1</version> 
 	
 	<name>maven-web-application</name>
 
@@ -96,19 +96,19 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://100.26.133.141:8081/repository/paypal-releases/</url>
+	      <url>http://54.151.56.212:8081/repository/hillz-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.237.76.176:8081/repository/paypal-snapshots/</url>
+	      <name>Landmark Technologies Snapshot Nexus Repository</name>
+	      <url>http://54.151.56.212:8081/repository/hillz-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>hillztest2</finalName>
 		
 		<plugins>
 			<plugin>
