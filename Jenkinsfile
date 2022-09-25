@@ -1,54 +1,66 @@
-node
- {
-  
-  def mavenHome = tool name: "maven3.6.2"
-  
-      echo "GitHub BranhName ${env.BRANCH_NAME}"
-      echo "Jenkins Job Number ${env.BUILD_NUMBER}"
-      echo "Jenkins Node Name ${env.NODE_NAME}"
-  
-      echo "Jenkins Home ${env.JENKINS_HOME}"
-      echo "Jenkins URL ${env.JENKINS_URL}"
-      echo "JOB Name ${env.JOB_NAME}"
-  
-   properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
-  
-  stage("CheckOutCodeGit")
-  {
-   git branch: 'development', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
- }
- 
- stage("Build")
- {
- sh "${mavenHome}/bin/mvn clean package"
- }
- 
-  /*
- stage("ExecuteSonarQubeReport")
- {
- sh "${mavenHome}/bin/mvn sonar:sonar"
- }
- 
- stage("UploadArtifactsintoNexus")
- {
- sh "${mavenHome}/bin/mvn deploy"
- }
- 
-  stage("DeployAppTomcat")
- {
-  sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
-  }
- }
- 
- stage('EmailNotification')
- {
- mail bcc: 'mylandmarktech@gmail.com', body: '''Build is over
+pipeline{
+   agent any
+   tools {
+     maven "maven3.8.6"
+   }
+   stages {
+     stage('1GetCode'){
+       steps{
+         sh "echo 'cloning the latest application version' "
+         git branch: 'feature', credentialsId: 'b8ab686c-19f5-47fb-a9bb-82e2972b53c6', url: 'https://github.com/Samablaise/maven-web-application'
 
- Thanks,
- Landmark Technologies,
- +14372152483.''', cc: 'mylandmarktech@gmail.com', from: '', replyTo: '', subject: 'Build is over!!', to: 'mylandmarktech@gmail.com'
- }
- */
- 
- }
+       }
+     }
+     stage('2Testing+Build'){
+       steps{
+         sh "echo 'running JUnit-test-cases' "
+         sh "echo ' testing must be passed to create artifacts' "
+         sh "mvn clean package"
+       }
+     }
+     /*
+     stage('3codeQuality'){
+       steps{
+         sh "echo 'Performing CodeQualityAnalysis' "
+         sh "mvn sonar:sonar"
+       }
+     }
+     stage('4uploadNexus'){
+       steps{
+         sh "mvn deploy"
+       }
+     }
+     stage('7deploy2Prod'){
+       steps{
+         deploy adapters: [tomcat9(credentialsId: 'tomcat-credential', path: '', url: 'http://3.95.215.170:7000/')], contextPath: null, war: 'target/*war'
+       }
+     }
+   }     
+     post {
+       always{
+           emailext body: '''Hey guys 
+Please check Build status.
+
+Thanks 
+Landmark
++237 679 465 719''', recipientProviders: [buildUser(), developers()], subject: 'Success', to: 'fintech-team@gmail.com'
+       }
+       success{
+         emailext body: '''Hey guys 
+Good job build and deployment is successful 
+
+Thanks 
+Landmark
++237 679 465 719''', recipientProviders: [buildUser(), developers()], subject: 'Success', to: 'fintech-team@gmail.com'
+       }
+       failure{
+           emailext body: '''Hey guys 
+Build failed. Please resolve issues.
+
+Thanks 
+Landmark
++237 679 465 719''', recipientProviders: [buildUser(), developers()], subject: 'Success', to: 'fintech-team@gmail.com'
+       }
+   }
+   */
+}
