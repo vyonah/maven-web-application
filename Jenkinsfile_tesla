@@ -27,8 +27,8 @@ node{
     timeout(time:5, unit:'DAYS') {
     input message: 'Application ready for deployment, Please review and approve'
       }
-       /*
   }
+  /*
   stage('7deploy2Prod'){
     sh "sleep  50"
     deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', path: '', url: 'http://35.170.249.131:8080/')], contextPath: null, war: 'target/*war'
