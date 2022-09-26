@@ -4,7 +4,7 @@ agent any
 
 tools
 {
-  maven 'maven3.6.3'
+  maven 'maven3.8.6'
 
 }
 
@@ -14,7 +14,7 @@ triggers{
 
 options{
     timestamps()
-    buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2'))
+   // buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2'))
 }
 
  stages{
@@ -46,7 +46,7 @@ options{
 	  sh "mvn deploy"
 	 }
    }
-   
+  /* 
   stage('DeployAppIntoTomcat')
  {
    steps{
@@ -80,4 +80,5 @@ options{
  }
  
  }
+ */
 }
