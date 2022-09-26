@@ -15,7 +15,7 @@ pipeline{
                 sh "mvn clean package"
             }
         }
-
+/*
 
  stage('CodeQuality'){
       steps{
@@ -57,5 +57,6 @@ Thanks
 Molarmex''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
     }
 }
+*/
 }
 
