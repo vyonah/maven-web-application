@@ -95,14 +95,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.82.251.195:8081/repository/app-release/</url>
+	      <name>App Releases Nexus Repository</name>
+	      <url>http://54.167.222.31:8081/repository/app-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.82.251.195:8081/repository/app-snapshots/</url>
+	      <name>App Snapshot Nexus Repository </name>
+	      <url>http://54.167.222.31:8081/repository/app-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
