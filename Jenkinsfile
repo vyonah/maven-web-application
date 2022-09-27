@@ -1,66 +1,37 @@
 pipeline{
-  agent any 
-  tools {
-    maven "maven3.6.0"
-  }  
-  stages {
-    stage('1GetCode'){
-      steps{
-        sh "echo 'cloning the latest application version' "
-        git branch: 'feature', credentialsId: 'gitHubCredentials', url: 'https://github.com/LandmakTechnology/maven-web-application'
-      }
+    agent any
+    tools{
+        maven "maven3.8.6"
     }
-    stage('3Test+Build'){
-      steps{
-        sh "echo 'running JUnit-test-cases' "
-        sh "echo 'testing must passed to create artifacts ' "
-        sh "mvn clean package"
-      }
+    stages{
+        stage('1Getcode'){
+            steps{
+                  git branch: 'development', url: 'https://github.com/Chimex999/app.git'
+            }
+        }
+        stage('Test&Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('Qualityassurance'){
+            steps{
+                sh "mvn sonar:sonar"
+            }
+        }
+        stage('DeploytoNexus'){
+            steps{
+                sh "mvn deploy"
+            }
+        }
+        stage('Deploy2Tomcat'){
+            steps{
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://3.92.208.82:8080')], contextPath: null, war: 'target/*war'
+            }
+        }
     }
-    /*
-    stage('4CodeQuality'){
-      steps{
-        sh "echo 'Perfoming CodeQualityAnalysis' "
-        sh "mvn sonar:sonar"
-      }
+    post{
+        always{
+           emailext body: 'Act accordingly', recipientProviders: [contributor()], subject: 'Build Finished', to: 'Developers' 
+        }
     }
-    stage('5uploadNexus'){
-      steps{
-        sh "mvn deploy"
-      }
-    } 
-    stage('8deploy2prod'){
-      steps{
-        deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', path: '', url: 'http://35.170.249.131:8080/')], contextPath: null, war: 'target/*war'
-      }
-    }
-}
-  post{
-    always{
-      emailext body: '''Hey guys
-Please check build status.
-
-Thanks
-Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
-    }
-    success{
-      emailext body: '''Hey guys
-Good job build and deployment is successful.
-
-Thanks
-Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
-    } 
-    failure{
-      emailext body: '''Hey guys
-Build failed. Please resolve issues.
-
-Thanks
-Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
-    }
-  } 
-  */
-}
-}
