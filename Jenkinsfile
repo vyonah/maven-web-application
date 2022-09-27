@@ -35,3 +35,4 @@ pipeline{
            emailext body: 'Act accordingly', recipientProviders: [contributor()], subject: 'Build Finished', to: 'Developers' 
         }
     }
+}
