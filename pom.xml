@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://18.119.13.82:8081/group3/repository/tesla-practice.releases/</url>
+	      <url>http://18.119.13.82:8081/group3/repository/paypal-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.119.13.82:8081/group3/repository/bugati-practice-snapshots/</url>
+	      <url>http://18.119.13.82:8081/group3/repository/paypal-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
