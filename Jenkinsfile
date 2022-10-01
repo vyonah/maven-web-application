@@ -2,7 +2,7 @@ pipeline{
   agent any 
   tools {
     maven "maven3.8.6"
-  }  
+  } 
   stages {
     stage('1GetCode'){
       steps{
@@ -28,7 +28,7 @@ pipeline{
         sh "mvn deploy"
       }
     }  
-     stage('8deploy2prod'){
+     stage('8deploy2stage'){
       steps{
         deploy adapters: [tomcat9(credentialsId: 'tomcatcredentials', path: '', url: 'http://54.193.153.41:8080/')], contextPath: null, war: 'target/*war'
     }
@@ -38,24 +38,23 @@ post{
     always{
       emailext body: '''Hey guys
              please check build status
-
-
+             
 thanks
 MARZ''', subject: 'SUCCESS', to: 'mariustuma88@gmail.com'
-   }
+    }
+  
     success{
       emailext body: '''Hey guys
                good job build and deployment is successful
-
-
+                             
 thanks
 MARZ''', subject: 'SUCCESS', to: 'mariustuma88@gmail.com'
    } 
+  
     failure{
       emailext body: '''Hey guys
-               good job build and deployment is successful
-
-
+                build and deployment has failed
+                
 thanks
 MARZ''', subject: 'SUCCESS', to: 'mariustuma88@gmail.com'
     }
