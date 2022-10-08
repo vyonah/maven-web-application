@@ -102,7 +102,7 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
 
-	      <url>http://172.31.21.205:8191/landmark/repository/Etihad_releases/</url>
+	      <url>http://18.212.221.173:8191/landmark/repository/Etihad_releases/</url>
 
 	    </repository>
 	    
@@ -110,7 +110,7 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
 
-	      <url>http://172.31.21.205:8191/landmark/repository/Etihad_snapshots/</url>
+	      <url>http://18.212.221.173:8191/landmark/repository/Etihad_snapshots/</url>
 
 	    </snapshotRepository>
 	    
