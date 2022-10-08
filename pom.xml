@@ -102,7 +102,7 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
 
-	      <url>http://34.230.38.9:8191/landmark/repository/paypal-releases/</url>
+	      <url>http://172.31.21.205:8191/landmark/repository/Etihad_releases/</url>
 
 	    </repository>
 	    
@@ -110,14 +110,14 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
 
-	      <url>http://34.230.38.9:8191/landmark/repository/paypal-snapshot/</url>
+	      <url>http://172.31.21.205:8191/landmark/repository/Etihad_snapshots/</url>
 
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>Etihad-app</finalName>
 		
 		<plugins>
 			<plugin>
