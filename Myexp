@@ -1,1 +1,46 @@
 
+@Library('Trey-shared-library') _
+pipeline {
+    
+    agent any
+    
+    tools{
+        maven "maven3.8.6"
+    }
+    
+    stages{
+        
+        stage('getcode') {
+            steps { 
+                sh "echo start of project"
+                git 'https://github.com/mdedika1/maven-web-application'
+                
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh "echo build succeded"
+                common('Build')
+            }
+        }
+        
+        stage ("codequality") {
+            steps {
+                sh "echo code quality executed"
+                common('SonarQube Report')
+            }
+        }
+        
+        stage('uploadartifact') {
+            steps {
+                sh "echo code quality succesfully executed"
+                common('Upload Into Nexus')
+            }
+        }
+        
+        
+        
+        
+    }
+}
