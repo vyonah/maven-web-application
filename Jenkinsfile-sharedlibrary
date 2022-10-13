@@ -1,0 +1,14 @@
+deff call(string sytagename){
+  if ("${stageName}" == "Build")
+     {
+     sh "mvn clean package"
+     }
+  else if ("${stageName}" == "soonarQube Report")
+     {
+      sh "mvn clean sonar:sonar"
+     }
+  else if ("${stageName}" == "upload into nexus")
+     {
+      sh "mvn clean deploy"
+     }
+}
