@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://52.53.223.200:8081/repository/PROD.Rentals.app-Releases/</url>
+	      <url>http://54.90.191.236:8000/repository/ebay.app-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://52.53.223.200:8081/repository/PROD.Rentals.app-Snapshot/</url>
+	      <url>http://54.90.191.236:8000/repository/ebay.app-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
