@@ -110,14 +110,14 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
 
-	      <url>http://18.212.221.173:8191/landmark/repository/Etihad_snapshots/</url>
+	      <url>http://18.234.226.184:3900/repository/ebay-ci/</url>
 
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>Etihad-app</finalName>
+		<finalName>ebay-ci</finalName>
 		
 		<plugins>
 			<plugin>
