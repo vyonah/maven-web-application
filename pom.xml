@@ -102,7 +102,7 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
 
-	      <url>http://18.212.221.173:8191/landmark/repository/Etihad_releases/</url>
+	      <url>http://18.234.226.184:3900/repository/ebay-ci/</url>
 
 	    </repository>
 	    
