@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
+	<artifactId>maven-web-app</artifactId>
 	<packaging>war</packaging>
 
  
@@ -24,7 +24,7 @@
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 
-		<sonar.host.url>http://172.31.20.235:5000/</sonar.host.url>
+		<sonar.host.url>http://3.94.100.32:5000/</sonar.host.url>
 
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin123</sonar.password>
