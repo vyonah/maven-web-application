@@ -102,7 +102,7 @@
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
 
-	      <url>http://172.31.20.235:3900/repository/ebay-ci/</url>
+	      <url>http://3.94.100.32:3900/repository/ebay-ci/</url>
 
 	    </repository>
 	    
