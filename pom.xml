@@ -22,7 +22,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http:18.117.88.9:9000/</sonar.host.url>
+		<sonar.host.url>http:3.145.139.222/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -96,13 +96,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://13.59.109.68:8081/repository/new-tesla-fe-repo-release/</url>
+	      <url>http://18.118.209.109:8081/repository/tesla-fe-release.1/</url>
 	    </repository>
 		
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.59.109.68:8081/repository/new-tesla-fe-snapshot/</url>
+	      <url>http://18.118.209.109:8081/repository/tesla.fe.snapshot.1/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
