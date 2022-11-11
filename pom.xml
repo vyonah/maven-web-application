@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
+	<artifactId>maven-web-app</artifactId>
 	<packaging>war</packaging>
 	
 	<version>0.0.3-</version> 
 	
-	<name>maven-web-app</name>
+	<name>maven-web-application</name>
 
 	<description>Maven Web Project for Java Project</description>
 
@@ -108,7 +108,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>tesla.app</finalName>
 		
 		<plugins>
 			<plugin>
