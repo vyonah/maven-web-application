@@ -93,6 +93,7 @@
 		
 	</dependencies>
 	<distributionManagement>
+	<!--	
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
@@ -104,7 +105,7 @@
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
 	      <url>http://35.182.248.75:8081/repository/Joseph-Snapshot/</url>
 	    </snapshotRepository>
-	    
+	    -->
 	</distributionManagement>
 	
 	<build>
