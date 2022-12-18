@@ -48,7 +48,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>0.0.2</version>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -87,7 +87,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>0.0.2</version>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -96,13 +96,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://http://44.211.84.53:8181/mylandmarktech/repository/Tesla-releases//</url>
+	      <url>http://http://44.211.84.53:8181/mylandmarktech/repository/Tesla-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://http://44.211.84.53:8181/mylandmarktech/repository/Tesla-snapshots//</url>
+	      <url>http://http://44.211.84.53:8181/mylandmarktech/repository/Tesla-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
