@@ -45,13 +45,14 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
+		<!--
+               <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-
+                -->
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -92,11 +93,11 @@
 		</dependency>	
 	</dependencies>
 	<distributionManagement>
-	    <repository>
+	    <releasesRepository>
               <id>nexus</id>
               <name>lucid-webapp-releases</name>
 	      <url>http://3.145.19.73:8081/repository/lucid-webapp-releases</url> 
-            </repository>
+            </releasesRepository>
 	    
 	    <snapshotRepository>
               <id>nexus</id>
