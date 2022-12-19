@@ -93,11 +93,11 @@
 		</dependency>	
 	</dependencies>
 	<distributionManagement>
-	    <releasesRepository>
+	    <repository>
               <id>nexus</id>
               <name>lucid-webapp-releases</name>
 	      <url>http://3.145.19.73:8081/repository/lucid-webapp-releases</url> 
-            </releasesRepository>
+            </repository>
 	    
 	    <snapshotRepository>
               <id>nexus</id>
