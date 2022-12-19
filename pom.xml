@@ -98,11 +98,11 @@
 	      <url>http://3.145.19.73:8081/repository/lucid-webapp-releases/</url> 
             </repository>
 	    
-	    <repository>
-             <id>nexus1</id>
+	    <Snapshot repository>
+             <id>nexus</id>
              <name>lucid-webapp-snapshot</name>
              <url>http://3.145.19.73:8081/repository/lucid-webapp-snapshot//</url>
-            </repository>
+            </Snapshot repository>
 	    
 	</distributionManagement>
 	
