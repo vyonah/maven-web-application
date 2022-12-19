@@ -94,13 +94,13 @@
 	<distributionManagement>
 	    <repository>
               <id>nexus</id>
-              <name>lucidwebapp releases</name>
-              <url>http://3.145.19.73:8081/repository/lucid-webapp-releases/</url> 
+              <name>lucid-webapp-releases</name>
+	      <url>http://3.145.19.73:8081/repository/lucid-webapp-releases/</url> 
             </repository>
 	    
 	    <snapshotRepository>
              <id>nexus</id>
-             <name>lucidwebapp snapshot</name>
+             <name>lucid-webapp-snapshot</name>
              <url>http://3.145.19.73:8081/repository/lucid-webapp-snapshot/</url>
             </snapshotRepository>
 	    
