@@ -94,14 +94,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-web-releases/</url>
+	      <name>Landmark Technologies Release Nexus Repository</name>
+	      <url>http://http://3.236.171.8:8081/repository/wills_webappReleases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-webapp-snapshots/</url>
+	      <url>http:http://3.236.171.8:8081/repository/wills_webappSnapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
