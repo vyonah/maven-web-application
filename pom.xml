@@ -144,10 +144,7 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
-		<artifactId>maven-deploy-plugin</artifactId>
-<version>2.7</version>
-<packaging>maven-plugin</packaging>
-<name>Maven Deploy Plugin</name>	
+			
 </plugins>
 	</build>
 	
