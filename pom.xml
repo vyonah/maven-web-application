@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>ebay</finalName>
+		<finalName>tezehtech</finalName>
 		
 		<plugins>
 			<plugin>
