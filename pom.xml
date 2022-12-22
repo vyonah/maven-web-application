@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://18.119.13.82:8081/group3/repository/paypal-releases/</url>
+	      <url>http://18.224.95.200:8191/kunle/repository/tesla-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.119.13.82:8081/group3/repository/paypal-snapshots/</url>
+	      <url>http://18.224.95.200:8191/kunle/repository/tesla-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
