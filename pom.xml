@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://18.224.95.200:8191/kunle/repository/tesla-releases/</url>
+	      <url>http://3.141.7.250:8191/kunle/repository/tesla-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.224.95.200:8191/kunle/repository/tesla-snapshots/</url>
+	      <url>http://3.141.7.250:8191/kunle/repository/tesla-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
