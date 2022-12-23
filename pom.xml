@@ -101,7 +101,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>aomotere Snapshot Nexus Repository </name>
-	      <url>http:/34.222.245.183/:8181/aomotere/repository/tesla-webapp-snapshot/</url>
+	      <url>http://34.222.245.183:8181/aomotere/repository/tesla-webapp-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
