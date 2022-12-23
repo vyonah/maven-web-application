@@ -29,6 +29,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+<repositories>
+    	<repository>
+       		<id>nexus</id>
+       		<name>nexus proxy Repo</name>
+      		<url>http://3.135.217.254:8191/kunle/repository/tesla-proxy-repo/</url>
+    	</repository>
+ </repositories>
+	
 	<dependencies>
 		
 		<dependency>
