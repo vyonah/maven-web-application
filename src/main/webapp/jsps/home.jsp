@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Paypal Web application automation project </h1>
-<h1 align="center">We are developing and supporting quality Software Solutions to clients globally.
+<h1 align="center">Welcome to Paypal Web application project </h1>
+<h1 align="center">We are developing and supporting quality software solutions to support paypal global operations.
 	           We are providing them with quality applications and IT automation.
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h1>
 <hr>
