@@ -25,6 +25,9 @@
 		<sonar.host.url>http://18.208.187.115:9000/</sonar.host.url>
 		<sonar.login>Bola</sonar.login>
 		<sonar.password>admin123</sonar.password>
+		<sonar.login>9787d8595c5872771f9dc47058b5a384540a27f0</sonar.login>
+		<!-- <sonar.password>admin123</sonar.password>  -->
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -89,8 +92,7 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
-		</dependency>
-		
+		</dependency>	
 	</dependencies>
 	<distributionManagement>
 	    <repository>
@@ -108,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>tesla</finalName>
 		
 		<plugins>
 			<plugin>
