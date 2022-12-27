@@ -13,10 +13,7 @@ node{
   stage('4uploadArtifacts'){
     sh "${mavenHome}/bin/mvn deploy"
       http://18.206.14.0:8181/mylandmarktech/repository/Tesla-releases/
-      http://18.206.14.0:8181/mylandmarktech/repository/Tesla-snapshots/
-   
-    // vi pom.xml and added repository details   
-    // vi setting.xml and add AUTHENTICATION details  
+      http://18.206.14.0:8181/mylandmarktech/repository/Tesla-snapshots/  
   } 
   stage('5deploy2UAT'){
     sh "echo 'deploy to UAT'  "
