@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.0.1</version> 
+	<version>0.0.2</version> 
 	
 	<name>maven-web-application</name>
 
@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>aomotere Releases Nexus Repository</name>
-	      <url>http://18.236.204.60:8181/aomotere/repository/tesla-web-releases/</url>                                                                                               
+	      <url>http://18.236.204.60:8181/aomotere/repository/tesla-releases/</url>                                                                                               
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>aomotere Snapshot Nexus Repository </name>
-	      <url>http://18.236.204.60:8181/aomotere/repository/tesla-webapp-snapshots/</url>
+	      <url>http://18.236.204.60:8181/aomotere/repository/tesla-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
