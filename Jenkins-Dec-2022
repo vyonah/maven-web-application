@@ -1,0 +1,39 @@
+node{
+    def mavenHome = tool name: 'maven3.8.6'
+      stage('1cloneCode'){
+       git  "https://github.com/aomotere/maven-web-application"
+      }
+      /*
+    stage('2Test&Build'){
+      sh "${mavenHome}/bin/mvn clean package"
+      //bat "mvn clean package"
+    }
+    stage('3codequality'){
+     sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
+    stage('4uploadArctifacts'){
+     //sh "${mavenHome}/bin/mvn deploy"
+    }
+    stage('5deploy2UAT'){
+     sh "echo 'deploy to UAT' "
+     deploy adapters: [tomcat9(credentialsId: 'TomcatDominioncredentials', path: '', url: 'http://18.237.199.246:8177/')], contextPath: null, war: 'target/*war'
+    }
+    stage('6approvalGate'){
+     sh "echo 'ready for review'"
+     timeout(time:5, unit: 'DAYS'){
+     input massage: 'Application ready for deployment, please review and approve'
+     }
+ }
+    stage('7seploy2Prod'){
+     deploy adapters: [tomcat9(credentialsId: 'TomcatDominioncredentials', path: '', url: 'http://18.237.199.246:8177/')], contextPath: null, war: 'target/*war' 
+    }
+    
+    stage('8emailNotification'){
+    emailext body: '''Hi All,
+    
+check build status
+
+aomotere''', recipientProviders: [buildUser(), developers(), upstreamDevelopers(), brokenTestsSuspects(), brokenBuildSuspects(), contributor()], subject: 'build status', to: 'tesla-app@gmail.com'
+   }
+   */
+}
