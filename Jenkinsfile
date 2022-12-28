@@ -1,7 +1,7 @@
 pipeline{
   agent any 
   tools {
-    maven "maven3.6.0"
+    maven "maven3.8.6"
   }  
   stages {
     stage('1GetCode'){
@@ -31,7 +31,7 @@ pipeline{
     } 
     stage('8deploy2prod'){
       steps{
-        deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', path: '', url: 'http://35.170.249.131:8080/')], contextPath: null, war: 'target/*war'
+        deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', path: '', url: 'http://318.234.187.20:8177/')], contextPath: null, war: 'target/*war'
       }
     }
 }
@@ -42,7 +42,7 @@ Please check build status.
 
 Thanks
 Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
++1 678 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'chichidike7@gmail.com'
     }
     success{
       emailext body: '''Hey guys
@@ -50,7 +50,7 @@ Good job build and deployment is successful.
 
 Thanks
 Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
++1 678 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'chichidike7@gmail.com'
     } 
     failure{
       emailext body: '''Hey guys
@@ -58,7 +58,7 @@ Build failed. Please resolve issues.
 
 Thanks
 Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
++1 678 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'chichidike7@gmail.com'
     }
   } 
   */
