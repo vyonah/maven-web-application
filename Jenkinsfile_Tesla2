@@ -1,0 +1,36 @@
+node{
+    def mavenHome = tool name: 'maven3.8.5'
+   stage('1cloneCode'){
+    git "https://github.com/aramide80/maven-web-application"
+  }
+  stage('2Test&Build'){
+    sh "${mavenHome}/bin/mvn clean package" 
+    //bat "${mavenHome}/bin/mvn clean package" 
+  }
+  stage('3codeQuality'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+  }
+  stage('4uploadArtifacts'){
+      sh "${mavenHome}/bin/mvn deploy"
+}
+stage('5deploy2UAT'){
+    sh "echo 'deploy to UAT'  "
+    deploy adapters: [tomcat9(credentialsId: '3688fbba-bc18-4a8a-a930-f8e5319653be', path: '', url: 'http://54.157.234.56:8177/')], contextPath: null, war: 'target/*war'
+}
+stage('6approvalGate'){sh "echo 'ready for review' "
+    timeout(time:5, unit:'DAYS') {
+    input message: 'Application ready for deployment, Please review and approve'
+    }
+  stage('7deploy2Prod'){
+       sh "sleep 50"
+      deploy adapters: [tomcat9(credentialsId: '3688fbba-bc18-4a8a-a930-f8e5319653be', path: '', url: 'http://54.157.234.56:8177/')], contextPath: null, war: 'target/*war'
+      }
+  stage('8emailNotification'){
+      emailext body: '''Hi All,
+
+Check build status
+
+Landmark technologies''', recipientProviders: [buildUser(), developers()], subject: 'Build status', to: 'bolalawal78@gmail.com,labilawal@gmail.com'
+  }
+}
+}

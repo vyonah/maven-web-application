@@ -1,0 +1,38 @@
+pipeline{
+  agent any 
+  tools {
+    maven "maven3.8.5"
+  }  
+  stages {
+    stage('1GetCode'){
+      steps{
+        sh "echo 'cloning the latest application version' "
+        git branch: 'feature', url: 'https://github.com/aramide80/maven-web-application'
+      }
+    }
+  stage('4CodeQuality'){
+      steps{
+        sh "echo 'Perfoming CodeQualityAnalysis' "
+        sh "mvn sonar:sonar"
+      }
+    } 
+    stage('5uploadNexus'){
+      steps{
+        sh "mvn deploy"
+      }
+    }
+    stage('8deploy2prod'){
+      steps{
+        deploy adapters: [tomcat9(credentialsId: '3688fbba-bc18-4a8a-a930-f8e5319653be', path: '', url: 'http://54.157.234.56:8177/')], contextPath: null, war: 'target/*war' 
+    }     
+  }
+}
+post{
+    always{emailext body: '''Hey Guys,
+Good job build and deployment is successful
+
+Thanks
+Landmark''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'bolalawal78@gmail.com'
+}
+}
+}
