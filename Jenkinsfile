@@ -59,7 +59,4 @@ Landmark''', recipientProviders: [buildUser()], subject: 'failure', to: 'harrye9
             }
             */
         }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
+}
