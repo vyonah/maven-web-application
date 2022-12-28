@@ -3,11 +3,11 @@ node{
       stage('1cloneCode'){
        git  "https://github.com/aomotere/maven-web-application"
       }
-      /*
     stage('2Test&Build'){
       sh "${mavenHome}/bin/mvn clean package"
       //bat "mvn clean package"
     }
+    /*
     stage('3codequality'){
      sh "${mavenHome}/bin/mvn sonar:sonar"
     }
