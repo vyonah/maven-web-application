@@ -42,7 +42,7 @@ Please check Build status.
 
 Thanks.
 
-FugarTech.''', subject: 'success', to: 'princematt4eva@yahoo.com'
+FugarTech.''', subject: 'status', to: 'princematt4eva@yahoo.com'
     }
     success{
       emailext body: '''Hey guys,
@@ -63,7 +63,7 @@ Please kindly resolve.
 
 Thanks.
 
-FugarTech.''', subject: 'success', to: 'princematt4eva@yahoo.com'
+FugarTech.''', subject: 'fail', to: 'princematt4eva@yahoo.com'
     }
   } 
 }
