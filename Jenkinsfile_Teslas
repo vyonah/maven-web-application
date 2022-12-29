@@ -1,0 +1,18 @@
+node{
+    def mavenHome = tool name: 'maven 3.8.6'
+  stage('1cloneCode'){git "https://github.com/Oquie/maven-web-application"}
+  stage('2Test&Build'){sh "${mavenHome}/bin/mvn clean package"}
+  stage('3codeQuality'){sh "${mavenHome}/bin/mvn sonar:sonar"}
+  stage('4uploadArtifacts'){sh "${mavenHome}/bin/mvn deploy"}
+  stage('5deploy2UAT'){sh "echo 'deploy to UAT' " 
+  deploy adapters: [tomcat9(credentialsId: 'landmarkTomCred', path: '', url: 'http://54.197.1.204:8177/')], contextPath: null, war: 'target/*war'}
+  stage('6approvalGate'){ sh "echo 'ready for review' " 
+  timeout(time:5, unit:'DAYS') {input message: 'Application ready for deployment, Please review and approve'}
+  }
+  stage('7deploy2Prod'){
+  deploy adapters: [tomcat9(credentialsId: 'landmarkTomCred', path: '', url: 'http://54.197.1.204:8177/')], contextPath: null, war: 'target/*war'}
+  stage('8emailNotification'){ emailext body: '''Hi All, 
+  Check Build status. 
+  StarTech''', recipientProviders: [contributor(), culprits(), buildUser(), brokenBuildSuspects(), requestor(), developers(), previous(), brokenTestsSuspects()], subject: 'Build status', to: 'stellanwachukwu@gmail.com'
+  }
+}
