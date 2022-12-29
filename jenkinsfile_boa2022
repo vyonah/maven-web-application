@@ -1,0 +1,33 @@
+node{
+  def mavenHome = tool name: 'maven3.8.6'
+  stage('1cloneCode'){
+    git "https://github.com/Goldennicole24/maven-web-application"
+  }
+  stage('2Test&Build'){
+    sh "${mavenHome}/bin/mvn clean package"
+  }
+  stage('3codeQuality'){
+    sh "${mavenHome}/bin/mvn clean sonar:sonar"
+  }
+  stage('4uploadArtifacts'){
+    sh "${mavenHome}/bin/mvn deploy"
+  }
+  stage('5deploy2UAT'){
+    sh "echo 'deploy to UAT'  "
+    deploy adapters: [tomcat9(credentialsId: 'TomcatDomiCredentials', path: '', url: 'http://35.182.28.40:8177/')], contextPath: null, war: 'target/*war'
+  }
+  stage('6approvalGate'){
+    sh "echo 'ready for review' "
+    timeout(time:5, unit:'HOURS') {
+    input message: 'Application ready for deployment, Please review and approve'
+    }
+  }
+  stage('7deploy2Prod'){
+      deploy adapters: [tomcat9(credentialsId: 'TomcatDomiCredentials', path: '', url: 'http://35.182.28.40:8177/')], contextPath: null, war: 'target/*war'
+  }
+  stage('8emailNotification'){
+      emailext body: '''Hi all. 
+please check script  is Ready.
+Landmark technologies''', recipientProviders: [buildUser(), contributor(), previous(), developers(), brokenBuildSuspects(), brokenTestsSuspects(), upstreamDevelopers()], subject: 'Build Script', to: 'gbaja.segun@gmail.com'
+  }
+}
