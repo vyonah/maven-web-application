@@ -101,7 +101,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.67.207:8081/repository/ebay-webapp-snapshots/</url>
+	      <url>http://172.31.67.207:8081/repository/nissan-app-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
