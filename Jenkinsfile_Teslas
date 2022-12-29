@@ -10,6 +10,7 @@ node{
   timeout(time:5, unit:'DAYS') {input message: 'Application ready for deployment, Please review and approve'}
   }
   stage('7deploy2Prod'){
+  sh "sleep 30"
   deploy adapters: [tomcat9(credentialsId: 'landmarkTomCred', path: '', url: 'http://54.197.1.204:8177/')], contextPath: null, war: 'target/*war'}
   stage('8emailNotification'){ emailext body: '''Hi All, 
   Check Build status. 
