@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>teslaFE</finalName>
+		<finalName>PaypalFE</finalName>
 		
 		<plugins>
 			<plugin>
