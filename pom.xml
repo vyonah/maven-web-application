@@ -22,7 +22,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http:18.223.195.195:9000/</sonar.host.url>
+		<sonar.host.url>http:172.31.6.77:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -96,19 +96,19 @@
 	    <repository>
               <id>nexus</id>
               <name>lucid-webapp-releases</name>
-	      <url>http://172.31.15.12:8081/repository/polestar-releases/</url> 
+	      <url>http://13.58.5.73:8081/repository/polestar-releases/</url> 
             </repository>
 	    
 	    <snapshotRepository>
               <id>nexus</id>
               <name>lucid-webapp-snapshot</name>
-              <url>http://172.31.15.12:8081/repository/polestar-snapshot/</url>
+              <url>http://13.58.5.73:8081/repository/polestar-releases/</url>
             </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla</finalName>
+		<finalName>polestar</finalName>
 		
 		<plugins>
 			<plugin>
