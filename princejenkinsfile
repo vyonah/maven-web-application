@@ -1,0 +1,42 @@
+node{
+  def mavenHome = tool name: 'maven3.8.6'
+  stage('1cloneCode'){
+    git "https://github.com/princemattgithub/maven-web-application"
+  }
+  stage('2Test&Build'){
+    sh "${mavenHome}/bin/mvn clean package"
+    //bat "${mavenHome}/bin/mvn clean package"
+  }
+  stage('3codeQuality'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+  }
+  stage('4uploadArtifacts'){
+    sh "${mavenHome}/bin/mvn deploy"
+    //http://52.53.227.31:8191/landmark/repository/tesla-fe-snapshots/
+    //http://52.53.227.31:8191/landmark/repository/tesla-fe-releases/
+    // vi pom.xml and added repository details   
+    // vi setting.xml and add AUTHENTICATION details  
+  } 
+  stage('5deploy2UAT'){
+    sh "echo 'deploy to UAT'  "
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-prince', path: '', url: 'http://52.23.204.255:8080/')], contextPath: null, onFailure: false, war: 'target/*war'
+  }
+  stage('6approvalGate'){
+    sh "echo 'ready for review' "
+    timeout(time:5, unit:'DAYS') {
+    input message: 'Application ready for deployment, Please review and approve'
+  }
+  }
+  stage('7deploy2Prod'){
+    sh "sleep  10"
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-prince', path: '', url: 'http://52.23.204.255:8080/')], contextPath: null, onFailure: false, war: 'target/*war'
+  }
+  stage('8emailNotification'){
+    emailext body: '''Hi All,
+
+Check Build status.
+
+Landmark Technologies''', recipientProviders: [buildUser(), developers(), upstreamDevelopers(), brokenBuildSuspects(), brokenTestsSuspects(), contributor()], subject: 'build status', to: 'tesla-app@gmail.com'
+  }
+  }
+  
