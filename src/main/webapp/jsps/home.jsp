@@ -10,8 +10,8 @@
 </head>
 <body>
 <h1 align="center">Welcome to Paypal Web application project </h1>
-<h1 align="center">We are developing and supporting quality fintech solutions for paypal's gobal business.
-	           We are providing them with quality applications and IT automation.
+<h1 align="center">We are developing and supporting quality fintech solutions for paypal's gobal operations.
+	           We are providing them with quality applications and IT automation solutions.
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h1>
 <hr>
 <br>
