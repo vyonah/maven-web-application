@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>PaypalFE</finalName>
+		<finalName>Apple</finalName>
 		
 		<plugins>
 			<plugin>
