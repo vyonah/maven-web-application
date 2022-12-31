@@ -1,66 +1,67 @@
 pipeline{
-  agent any 
-  tools {
-    maven "maven3.6.0"
-  }  
-  stages {
-    stage('1GetCode'){
-      steps{
-        sh "echo 'cloning the latest application version' "
-        git branch: 'feature', credentialsId: 'gitHubCredentials', url: 'https://github.com/LandmakTechnology/maven-web-application'
+	agent any
+	tools {
+	maven "Maven3.8.6"
+	}
+stages{
+	stage('1GetCode'){
+		steps{
+			sh "echo 'cloning the latest version of the application'  "
+			git branch: 'feature', credentialsId: 'GitHubCredentials', url: 'https://github.com/MovOps/maven-web-application'
+			}
+		}
+	stage('2Test+Build'){
+		steps{
+                        sh "echo 'running JUnit-test-cases' "
+                        sh "echo 'testing must pass to create artifacts ' "
+                        sh "mvn clean package"
+                          }
+                }
+	/*
+  stage('3CodeQuality'){
+              steps{
+                    sh "echo 'Perfoming CodeQualityAnalysis' "
+                    sh "mvn sonar:sonar"
+                  }
+            }
+	stage('5uploadNexus'){
+             steps{
+                sh "echo 'Deploying to Artifactoryr' " 
+                sh "mvn deploy"
+                  }
+            }
+	stage('6deploy2prod'){
+         steps{
+            sh "echo 'Deploying to Application Server' "
+            deploy adapters: [tomcat9(credentialsId: 'Tomcat-Credentials', path: '', url: 'http://18.117.227.43:8080/')], contextPath: null, war: 'target/*war'
+            }     
       }
     }
-    stage('3Test+Build'){
-      steps{
-        sh "echo 'running JUnit-test-cases' "
-        sh "echo 'testing must passed to create artifacts ' "
-        sh "mvn clean package"
-      }
-    }
-    /*
-    stage('4CodeQuality'){
-      steps{
-        sh "echo 'Perfoming CodeQualityAnalysis' "
-        sh "mvn sonar:sonar"
-      }
-    }
-    stage('5uploadNexus'){
-      steps{
-        sh "mvn deploy"
-      }
-    } 
-    stage('8deploy2prod'){
-      steps{
-        deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', path: '', url: 'http://35.170.249.131:8080/')], contextPath: null, war: 'target/*war'
-      }
-    }
-}
-  post{
-    always{
-      emailext body: '''Hey guys
-Please check build status.
+    post('7emailnotification'){
+        always{
+        emailext body: '''Hey Team,
+        Please review current build status.
 
-Thanks
-Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
-    }
-    success{
-      emailext body: '''Hey guys
-Good job build and deployment is successful.
+        Thanks!
+        Zoolch DevOps Team
+        +1678 360 0524''', recipientProviders: [buildUser(), contributor(), developers(), requestor(), upstreamDevelopers()], subject: 'New Build', to: 'team@zoolch.com'    
+        }
+        success{
+        emailext body: '''Hey Team,
+        Congratulations! Build is a success.
 
-Thanks
-Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
-    } 
-    failure{
-      emailext body: '''Hey guys
-Build failed. Please resolve issues.
+        Thanks!
+        Zoolch DevOps Team
+        +1678 360 0524''', recipientProviders: [buildUser(), contributor(), developers(), requestor(), upstreamDevelopers()], subject: 'New Build', to: 'team@zoolch.com'    
+        }    
+        failure{  
+        emailext body: '''Hey Team,
+        Build failed! Please resolve issues.
 
-Thanks
-Landmark 
-+1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
+        Thanks!
+        Zoolch DevOps Team
+        +1678 360 0524''', recipientProviders: [buildUser(), contributor(), developers(), requestor(), upstreamDevelopers()], subject: 'New Build', to: 'team@zoolch.com'    
+        }
     }
-  } 
-  */
-}
-}
+  */  
+ }
