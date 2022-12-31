@@ -22,13 +22,21 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://3.23.59.73:9000/</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password>
+		<sonar.host.url>http://172.31.33.41:9000/</sonar.host.url>
+		<sonar.login>8545152fd286569fd991f415dfb0da6a88bc94bc</sonar.login>
+		<!-- <sonar.password>admin</sonar.password> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+<repositories>
+    	<repository>
+       		<id>nexus</id>
+       		<name>nexus proxy Repo</name>
+      		<url>http://3.135.217.254:8191/kunle/repository/tesla-proxy-repo/</url>
+    	</repository>
+ </repositories>
+	
 	<dependencies>
 		
 		<dependency>
@@ -97,13 +105,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://18.119.13.82:8081/group3/repository/paypal-releases/</url>
+	      <url>http://172.31.11.179:8191/kunle/repository/tesla-app-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.119.13.82:8081/group3/repository/paypal-snapshots/</url>
+	      <url>http://172.31.11.179:8191/kunle/repository/tesla-app-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
