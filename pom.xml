@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.0.3</version> 
+	<version>0.0.4</version> 
 	
 	<name>zelle-web-application</name>
 
@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.145.99.131:8181/mylandmarktech/repository/zelle_releases/</url>
+	      <url>http://18.118.141.14:8181/mylandmarktech/repository/zelle_releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.145.99.131:8181/mylandmarktech/repository/zelle_snapshot/</url>
+	      <url>http://18.118.141.14:8181/mylandmarktech/repository/zelle_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
