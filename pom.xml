@@ -96,13 +96,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://54.193.134.3:8081/repository/fintechprojectrelease/</url>
+	      <url>http://13.56.11.71:8081/repository/MTNProject-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.193.134.3:8081/repository/fintechprojectsnapshot/</url>
+	      <url>http://13.56.11.71:8081/repository/MTNproject-Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
