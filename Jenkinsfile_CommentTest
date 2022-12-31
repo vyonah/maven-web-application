@@ -1,0 +1,40 @@
+node{
+def mavenHome = tool name: 'Maven3.8.6'
+ stage('1cloneCode'){
+  git "https://github.com/MovOps/maven-web-application"
+  //sh "git clone https://github.com/MovOps/maven-web-application"
+   }
+ stage('2Test&Build'){
+  sh "${mavenHome}/bin/mvn clean package"
+   }
+   /*
+  stage('3codeQuality'){
+   sh "${mavenHome}/bin/mvn clean sonar:sonar"
+   }
+  stage('4uploadArtifacts'){
+   sh "${mavenHome}/bin/mvn  deploy"
+   } 
+   stage('5deploy2UAT'){
+    sh "echo 'deploy to UAT' "
+    deploy adapters: [tomcat9(credentialsId: 'Tomcat-Credentials', path: '', url: 'http://18.117.227.43:8080/')], contextPath: null, war: 'target/*war'
+   }
+   stage('6approvalGate'){
+    sh "echo 'ready for review' "
+    timeout(time:5, unit:'DAYS') {
+    input message: 'Application ready for deployment, Please review, approve and revert'
+      }
+   }  
+   stage('7deploy2Prod'){
+   sh "sleep 50"
+   deploy adapters: [tomcat9(credentialsId: 'Tomcat-Credentials', path: '', url: 'http://18.117.227.43:8080/')], contextPath: null, war: 'target/*war'
+   }
+
+    stage('8emailNotification'){
+    emailext body: '''Hi All,
+
+    Check Build Status.
+
+    Zoolch''', recipientProviders: [developers(), buildUser(), contributor(), upstreamDevelopers()], subject: 'build status ', to: 'Team'
+    }
+ */   
+}
