@@ -16,7 +16,8 @@ stage('5deployUAT'){}
 stage('6approvalGate'){
     timeout(time:3, unit:"DAYS"){input message: 'app ready, please review and approve'}
 }
-stage('7deployProd'){}
+stage('7deployProd'){
+sh "sleep 50"}
 stage('8EmailNotification'){emailext body: 'build completed', recipientProviders: [buildUser(), contributor(), developers(), upstreamDevelopers()], subject: 'Build status', to: 'emeka.duoh@gmail.com'}
 }
 
