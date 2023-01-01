@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>Apple</finalName>
+		<finalName>Fintech</finalName>
 		
 		<plugins>
 			<plugin>
