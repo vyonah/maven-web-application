@@ -2,12 +2,12 @@ pipeline{
   agent any 
   tools {
     maven "maven3.8.6"
-    }  
+  }  
   stages {
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-        git branch: 'feature', credentialsId: 'gitHubCredentials', url: 'https://github.com/kunlequadree/maven-web-application'
+        git branch: 'feature', credentialsId: 'GitHubCredentials', url: 'https://github.com/kunlequadree/maven-web-application'
       }
     }
     stage('3Test+Build'){
@@ -17,48 +17,35 @@ pipeline{
         sh "mvn clean package"
       }
     }
-   /* 
-   stage('4CodeQuality'){
+    /*
+    stage('4CodeQuality'){
       steps{
         sh "echo 'Perfoming CodeQualityAnalysis' "
         sh "mvn sonar:sonar"
       }
-    }
+    } 
     stage('5uploadNexus'){
       steps{
         sh "mvn deploy"
       }
-    }
+    }  
     stage('8deploy2prod'){
       steps{
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://3.145.135.249:8080/')], contextPath: null, war: 'target/*war'   }
-        }
-}
-    post{
-    always{
-      emailext body: '''Hey guys
-        Please check build status.
-
-        Thanks
-        Landmark 
-        +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
+        deploy adapters: [tomcat9(credentialsId: 'TomcatCredentials', path: '', url: 'http://18.118.17.217:8080/')], contextPath: null, war: 'target/*war'
     }
-    success{
-      emailext body: '''Hey guys
-        Good job build and deployment is successful.
-
-        Thanks
-        Landmark 
-        +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
-    } 
-    failure{
-      emailext body: '''Hey guys
-        Build failed. Please resolve issues.
-
-        Thanks
-        Landmark 
-        +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'}
   }
-  */
+}
+post{
+    always{
+       emailext body: 'please check build status', recipientProviders: [buildUser(), contributor(), developers()], subject: 'Success', to: 'paypalapp@gmail.com' 
+}
+success{
+       emailext body: 'success build status', recipientProviders: [buildUser(), contributor(), developers()], subject: 'Success', to: 'paypalapp@gmail.com' 
+}
+failure{
+       emailext body: 'failed build status', recipientProviders: [buildUser(), contributor(), developers()], subject: 'Success', to: 'paypalapp@gmail.com' 
 }
 }
+*/
+}
+}  
