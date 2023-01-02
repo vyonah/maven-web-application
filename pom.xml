@@ -25,6 +25,7 @@
 		<sonar.host.url>http:172.31.13.188:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -83,25 +84,29 @@
 		</dependency>
 		
 		<!-- provided dependencies -->
-			
+
 	</dependencies>
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://100.25.43.18:8081/mylandmarktech/repository/tesla-web-releases/</url>
+
+	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-web-releases/</url>
+
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus1</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://100.25.43.18:8081/mylandmarktech/repository/tesla-webapp-snapshots/</url>
+
+	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-webapp-snapshots/</url>
+
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-app</finalName>
+		<finalName>tesla</finalName>
 		
 		<plugins>
 			<plugin>
