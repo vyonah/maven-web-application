@@ -1,0 +1,51 @@
+pipeline{
+  agent any 
+  tools {
+    maven "maven3.6.0"
+  }  
+  stages {
+    stage('1GetCode'){ steps{ sh "echo 'cloning the latest application version' "
+        git branch: 'feature', credentialsId: 'gitHubCredentials', url: 'https://github.com/Oquie/maven-web-application'
+      }
+    }
+    stage('3Test+Build'){  steps{
+    sh "echo 'running JUnit-test-cases' "
+    sh "echo 'testing must be passed to create artifacts' "
+    sh "mvn clean package" 
+    }
+    }
+    stage('4CodeQuality'){   steps{
+    sh "echo 'Perfoming CodeQualityAnalysis' "
+    sh "mvn sonar:sonar"
+ }
+    } 
+    stage('5uploadNexus'){   steps{
+        sh "mvn deploy"
+      }
+    } 
+    stage('8deploy2prod'){
+      steps{
+         deploy adapters: [tomcat9(credentialsId: 'TomcatCredentials', path: '', url: 'http://3.84.121.85:8177/')], contextPath: null, war: 'target/*war'
+      }  
+    }
+  }
+ post {
+     always{
+ emailext body: '''Hey guys
+Please check build status.
+Thanks
+StarTech
++1 437 215 2483''', subject: 'deployment status', to: 'paypal@gmail.com'}
+success{emailext body: '''Hello guys 
+ Good job build and deployment is successful.
+ Thanks
+ StarTech
+ +1 437 215 2483''', subject: 'deployment status', to: 'paypal@gmail.com'}
+failure{emailext body: '''Hey guys
+Build failed .Please resolve issues.
+Thanks
+StarTech
++1 437 215 2483''', subject: 'deployment status', to: 'paypal@gmail.com'}
+ }
+ }
+    
