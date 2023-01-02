@@ -8,13 +8,13 @@
 	
 	<version>0.0.3</version> 
 	
-	<name>maven-web-application</name>
+	<name>DevOPSPro</name>
 
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Landmark Technologies</name>
-		<url>http://landmarktechnologies.com/</url>
+		<name>DevOPSPro2</name>
+		<url>https://github.com/DevOPSPro2/</url>
 	</organization>
 
 	<properties>
@@ -95,13 +95,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
+	      <name>https://github.com/DevOPSPro2 Releases Nexus Repository</name>
 	      <url>http://172.31.9.164:8081/repository/tesla-web-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+	      <name>https://github.com/DevOPSPro2 Snapshot Nexus Repository </name>
 	      <url>http://172.31.9.164:8081/repository/tesla-web-snapshots/</url>
 	    </snapshotRepository>
 	    
