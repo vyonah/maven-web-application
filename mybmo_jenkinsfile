@@ -1,0 +1,23 @@
+node{
+    def mavenHome = tool name: 'maven3.8.6'
+  stage('1cloneCode'){
+   git "https://github.com/CED-PFX/maven-web-application"
+   //sh "git clone https://github.com/CED-PFX/maven-web-application"
+   //bat sh "git clone https://github.com/CED-PFX/maven-web-application" (for windows os)
+  }
+  stage('2Test&Build'){
+   sh "${mavenHome}/bin/mvn package"
+  }
+   stage ('3codeQuality'){
+       sh "${mavenHome}/bin/mvn sonar:sonar"
+   }
+stage('4uploadArtifacts'){}
+stage('5deployUAT'){}
+stage('6approvalGate'){
+    timeout(time:3, unit:"DAYS"){input message: 'app ready, please review and approve'}
+}
+stage('7deployProd'){
+sh "sleep 50"}
+stage('8EmailNotification'){emailext body: 'build completed', recipientProviders: [buildUser(), contributor(), developers(), upstreamDevelopers()], subject: 'Build status', to: 'emeka.duoh@gmail.com'}
+}
+
