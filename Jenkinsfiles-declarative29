@@ -26,6 +26,8 @@ pipeline{
     stage('5uploadNexus'){
       steps{
         sh "mvn deploy"
+        //http://44.202.206.61:8081/repository/paypal_pipeine_releases/
+        //http://44.202.206.61:8081/repository/paypal_pipeline_snapshots/
       }
     } 
     stage('8deploy2prod'){
