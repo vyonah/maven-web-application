@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.0.2-SNAPSHOT</version> 
+	<version>0.0.2</version> 
 	
 	<name>maven-web-application</name>
 
@@ -22,8 +22,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http:172.31.71.9:9000/</sonar.host.url>
-		<sonar.login>9787d8595c5872771f9dc47058b5a384540a27f0</sonar.login>
+		<sonar.host.url>http:172.31.13.252:9000/</sonar.host.url>
+		<sonar.login>1f372ab4da4ef4ffd19454ccf1f9d55f6eac0a33</sonar.login>
 		<!-- <sonar.password>admin123</sonar.password>  -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-web-releases/</url>
+	      <url>http://44.202.206.61:8081/repository/Paypal_release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-webapp-snapshots/</url>
+	      <url>http://44.202.206.61:8081/repository/Paypal_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
