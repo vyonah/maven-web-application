@@ -29,28 +29,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
       
-	<repositories>
-    <repository>
-       <id>nexus</id>
-       <name>nexus proxy Repo</name>
-       <url>http://172.31.9.164:8081/repository/tesla-web-proxy/</url>
-    </repository>
-    </repository>
-	
-   -->
-   <repository>
-       <id>nexus</id>
-       <name>nexus group Repo</name>
-       <url>http://172.31.9.164:8081/repository/tesla-group/</url>
-    <repository>
-	    
-   <repository>
-       <id>nexus</id>
-       <name>nexus group Repo</name>
-       <url>http://172.31.9.164:8081/repository/maven-central/</url>
-     </repository>
-   </repository>
-   </--
 	<dependencies>
 		
 		<dependency>
