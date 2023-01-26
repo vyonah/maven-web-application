@@ -22,9 +22,14 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>http://172.31.3.65:9000/</sonar.host.url>
+		<sonar.login>d91f9231acf9bba2eb1ef9ffa2481a7b6d1ae3cf</sonar.login>
+		 <!-- <sonar.password>admin</sonar.password> -->
+=======
 		<sonar.host.url>http:172.31.71.9:9000/</sonar.host.url>
 		<sonar.login>9787d8595c5872771f9dc47058b5a384540a27f0</sonar.login>
 		<!-- <sonar.password>admin123</sonar.password>  -->
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -95,12 +100,18 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-web-releases/</url>
+
+	      <url>http://172.31.13.51:8081/repository/tesla-web-release/</url>
+=======
+	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-web-release
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+
+	      <url>http://172.31.13.51:8081/repository/tesla-webapp-snapshot/</url>
+=======
 	      <url>http://172.31.4.141:8181/mylandmarktech/repository/tesla-webapp-snapshots/</url>
 	    </snapshotRepository>
 	    
