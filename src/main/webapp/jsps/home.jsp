@@ -30,7 +30,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="/mylandmarklogo.png" alt="" width="150">
+		<img src="images/LWP Logo.png" alt="" width="150">
 	</span>
 	<span style="font-weight: bold;">
                 LearnWithPride Solutions, 
