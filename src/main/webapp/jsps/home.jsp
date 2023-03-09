@@ -11,7 +11,7 @@
 <body>
 <h1 align="center">Welcome to LearnWithPride Solutions, London, UK Office.</h1>
 <h1 align="center">We are Developing and supporting Quality  Software Solutions to Millions of Clients.
-	We are dedicated to offer Training for DevOps with Linux and Cloud Equipping IT Engineers for Best Performance.</h1>
+	We offer Training for DevOps with Linux and Cloud Equipping IT Engineers for Best Performance.</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
