@@ -13,7 +13,7 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>DevOPSPro2</name>
+		<name>prudevops30</name>
 		<url>https://github.com/DevOPSPro2/</url>
 	</organization>
 
@@ -95,13 +95,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>https://github.com/DevOPSPro2 Releases Nexus Repository</name>
+	      <name>https://github.com/prudevops30 Releases Nexus Repository</name>
 	      <url>http://172.31.9.164:8081/repository/tesla-web-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>https://github.com/DevOPSPro2 snapshots Nexus Repository </name>
+	      <name>https://github.com/prudevops30 snapshots Nexus Repository </name>
 	      <url>http://172.31.9.164:8081/repository/tesla-web-snapshots/ </url>
 	    </snapshotRepository>
 	    
