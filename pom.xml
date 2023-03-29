@@ -101,7 +101,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla</finalName>
+		<finalName>Pipeline</finalName>
 		
 		<plugins>
 			<plugin>
