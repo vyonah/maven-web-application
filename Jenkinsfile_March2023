@@ -5,8 +5,7 @@ node{
    }
  stage('2MavenBuild'){
    sh "${mavenHome}/bin/mvn package"
- }
- /* 
+ } 
  stage('3codeQuality'){
  	 sh "${mavenHome}/bin/mvn sonar:sonar"
  }
@@ -31,6 +30,5 @@ node{
 Build is done.
 
 LANDMARKTECH''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'simplicetajeken@yahoo.fr'
-  }
- */  
+  }  
 }
