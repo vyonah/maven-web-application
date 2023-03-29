@@ -86,7 +86,7 @@
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet</artifactId>
+			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>	
@@ -94,13 +94,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Releases Nexus Repository</name>
+	      <name>Pipeline-release</name>
 	      <url>http://10.0.0.82:8081/repository/Pipeline-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+	      <name>Pipeline-snapshot</name>
 	      <url>http://10.0.0.82:8081/repository/Pipeline-snapshot/</url>
 	    </snapshotRepository>
 	    
