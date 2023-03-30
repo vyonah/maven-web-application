@@ -9,10 +9,9 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to IUGET Cameroon, the Institute of academic excellence.</h1>
-<h1 align="center">We train and deploy the best and most consistent entrepreneurial minds.
-	           Our students have and are still making uncommon impacts in the job market.
-	IUGET welcomes you to where great minds are nurtured.</h1>
+<h1 align="center">Welcome to Flash-pay the fastest global money transfer app.</h1>
+<h1 align="center">We offer urgency and deligence with the click of a button
+	           Thank you for using Flash-pay.</h1>
 	
 <hr>
 <br>
