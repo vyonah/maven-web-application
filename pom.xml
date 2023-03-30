@@ -88,13 +88,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Pipeline-release</name>
+	      <name>maven-releases</name>
 	      <url>http://10.0.0.82:8081/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Pipeline-snapshot</name>
+	      <name>maven-snapshots</name>
 	      <url>http://10.0.0.82:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
