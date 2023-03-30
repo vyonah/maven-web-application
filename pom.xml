@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>IUGET</finalName>
+		<finalName>Flash-pay</finalName>
 		
 		<plugins>
 			<plugin>
