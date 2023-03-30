@@ -9,11 +9,12 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Yango taxi service Cameroon.</h1>
-<h1 align="center">We offer the best tours around our major cities.
-	           We prioritise safety and comfort.
-	Thank you for choosing Yango,enjoy your ride!!.
-	safe trip!!. </h1>
+<h1 align="center">Welcome to IUGET Cameroon, the Institute of academic excellence.</h1>
+<h1 align="center">We train and deploy the best and most consistent entrepreneurial minds.
+	           Our students have and are still making uncommon impacts in the job market.
+	Thank you for choosing IUGET, 
+	where global business minds are nurtured.</h1>
+	
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
