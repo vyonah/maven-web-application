@@ -89,19 +89,19 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Pipeline-release</name>
-	      <url>http://10.0.0.82:8081/repository/paypal-release/</url>
+	      <url>http://10.0.0.82:8081/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Pipeline-snapshot</name>
-	      <url>http://10.0.0.82:8081/repository/paypal-snapshot/</url>
+	      <url>http://10.0.0.82:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>Pipeline</finalName>
+		<finalName>maven</finalName>
 		
 		<plugins>
 			<plugin>
