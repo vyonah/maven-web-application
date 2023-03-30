@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>UBA</finalName>
+		<finalName>Yango</finalName>
 		
 		<plugins>
 			<plugin>
