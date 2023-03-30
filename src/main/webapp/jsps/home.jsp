@@ -9,11 +9,11 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Tesla Web application Project31.</h1>
-<h1 align="center">We are developing and supporting quality Software Solutions to millions of clients globally.
-	           We are raising millionaires in IT automation.
-	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.
-	Class32 will start on April 15, 2023. </h1>
+<h1 align="center">Welcome to UBA Cameroon.</h1>
+<h1 align="center">We offer the best banking services to clients globally.
+	           We use automated banking systems to make sure clients get best global quality services in less time.
+	Thank you for choosing UBA.
+	Happy banking. </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
