@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>Yango</finalName>
+		<finalName>IUGET</finalName>
 		
 		<plugins>
 			<plugin>
