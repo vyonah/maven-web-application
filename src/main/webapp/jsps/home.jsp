@@ -10,10 +10,10 @@
 </head>
 <body>
 <h1 align="center">Welcome to Yango taxi service Cameroon.</h1>
-<h1 align="center">We offer the best short distance trips  services to clients around major cities.
-	           We use automated  systems to pin-point client location and direction, we pickup clients exactly where they are located and dropp-off exactly at destination point.
+<h1 align="center">We offer the best tours around our major cities.
+	           We prioritise safety and comfort.
 	Thank you for choosing Yango,enjoy your ride!!.
-	Happy banking. </h1>
+	safe trip!!. </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
