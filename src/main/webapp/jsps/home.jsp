@@ -12,7 +12,7 @@
 <h1 align="center">Welcome to IUGET Cameroon, the Institute of academic excellence.</h1>
 <h1 align="center">We train and deploy the best and most consistent entrepreneurial minds.
 	           Our students have and are still making uncommon impacts in the job market.
-	Thanks for coming, where great minds are nurtured.</h1>
+	, where great minds are nurtured.</h1>
 	
 <hr>
 <br>
