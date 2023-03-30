@@ -9,10 +9,10 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to UBA Cameroon.</h1>
-<h1 align="center">We offer the best banking services to clients globally.
-	           We use automated banking systems to make sure clients get best global quality services in less time.
-	Thank you for choosing UBA.
+<h1 align="center">Welcome to Yango taxi service Cameroon.</h1>
+<h1 align="center">We offer the best short distance trips  services to clients around major cities.
+	           We use automated  systems to pin-point client location and direction, we pickup clients exactly where they are located and dropp-off exactly at destination point.
+	Thank you for choosing Yango,enjoy your ride!!.
 	Happy banking. </h1>
 <hr>
 <br>
