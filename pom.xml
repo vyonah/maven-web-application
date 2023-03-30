@@ -88,14 +88,14 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>maven-releases</name>
-	      <url>http://10.0.0.82:8081/repository/maven-releases/</url>
+	      <name>Tesla-release</name>
+	      <url>http://34.204.60.14:8081/repository/tesla-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>maven-snapshots</name>
-	      <url>http://10.0.0.82:8081/repository/maven-snapshots/</url>
+	      <name>Tesla-snapshot</name>
+	      <url>http://34.204.60.14:8081/repository/tesla-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
