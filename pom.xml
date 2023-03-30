@@ -89,13 +89,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Pipeline-release</name>
-	      <url>http://10.0.0.82:8081/repository/Pipeline-release/</url>
+	      <url>http://10.0.0.82:8081/repository/paypal-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Pipeline-snapshot</name>
-	      <url>http://10.0.0.82:8081/repository/Pipeline-snapshot/</url>
+	      <url>http://10.0.0.82:8081/repository/paypal-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
