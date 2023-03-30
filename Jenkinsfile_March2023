@@ -4,15 +4,13 @@ node{
     git credentialsId: 'githubcredentials', url: 'https://github.com/simplo78/maven-web-application.git'
    }
  stage('2MavenBuild'){
-   sh "${mavenHome}/bin/mvn clean package -X -e > mvninstall.txt"
-   sh "${mavenHome}/bin/mvn dependency:tree -Dverbose > mvnTree.txt"
-   sh "${mavenHome}/bin/mvn help:effective-pom -X > mvnpom.txt"
+     sh "${mavenHome}/bin/mvn clean package"
  } 
  stage('3codeQuality'){
  	 sh "${mavenHome}/bin/mvn sonar:sonar"
  }
   stage('4UploadArtifacts'){
- 	 sh "${mavenHome}/bin/mvn deploy -e"
+ 	 sh "${mavenHome}/bin/mvn deploy"
  }
   stage('5deploy2UAT'){
  	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://10.0.0.84:8080/')], contextPath: null, war: 'target/*war'
