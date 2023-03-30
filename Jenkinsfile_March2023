@@ -4,7 +4,9 @@ node{
     git credentialsId: 'githubcredentials', url: 'https://github.com/simplo78/maven-web-application.git'
    }
  stage('2MavenBuild'){
-   sh "${mavenHome}/bin/mvn package"
+   sh "${mavenHome}/bin/mvn clean package -X -e > mvninstall.txt"
+   sh "${mavenHome}/bin/mvn dependency:tree -Dverbose > mvnTree.txt"
+   sh "${mavenHome}/bin/mvn help:effective-pom -X > mvnpom.txt"
  } 
  stage('3codeQuality'){
  	 sh "${mavenHome}/bin/mvn sonar:sonar"
