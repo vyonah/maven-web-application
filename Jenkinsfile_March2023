@@ -1,7 +1,7 @@
 node{
 	def mavenHome = tool name: 'MAVEN3.9.1'
  stage('1.CodeClone'){
-    git credentialsId: 'githubcredentials', url: 'https://github.com/simplo78/maven-web-application.git'
+    git 'https://github.com/simplo78/maven-web-application.git'
    }
  stage('2MavenBuild'){
      sh "${mavenHome}/bin/mvn clean package"
