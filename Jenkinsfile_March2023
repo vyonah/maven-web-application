@@ -30,6 +30,6 @@ Build is done
 
 
 CHRISTABELAKANJI''', recipientProviders: [developers(), contributor(), buildUser()], subject: 'Build Status', to: 'christabelakanji@gmail.com'
-    }
+    }*/
   }
-}*/
+
