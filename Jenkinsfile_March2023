@@ -25,10 +25,7 @@ node{
  	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credts', path: '', url: 'http://10.0.0.84:8080')], contextPath: 'tomcat', war: 'target/*war'
  }
   stage('8emailNotify'){
-  	emailext body: '''Hello Team,
-
-Build is done.
-
-LANDMARKTECH''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'simplicetajeken@yahoo.fr'
+  	emailext body: ''' Greetings,
+This Job has been completed''', subject: 'Build succeeded', to: 'simplicetajeken@yahoo.fr'
   }  
 }
