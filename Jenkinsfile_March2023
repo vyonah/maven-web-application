@@ -1,20 +1,19 @@
 node{
-	def mavenHome = tool name: 'maven3.9.1'
+	def mavenHome = tool name: 'MAVEN3.9.1'
  stage('1.CodeClone'){
-    git credentialsId: 'gitHubCredentials', url: 'https://github.com/LandmakTechnology/maven-web-application'
+    git 'https://github.com/simplo78/maven-web-application.git'
    }
  stage('2MavenBuild'){
-   sh "${mavenHome}/bin/mvn package"
- }
- /* 
+     sh "${mavenHome}/bin/mvn clean package"
+ } 
  stage('3codeQuality'){
  	 sh "${mavenHome}/bin/mvn sonar:sonar"
  }
   stage('4UploadArtifacts'){
  	 sh "${mavenHome}/bin/mvn deploy"
  }
-   stage('5deploy2UAT'){
- 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://100.26.217.86:8080/')], contextPath: null, war: 'target/*war'
+  stage('5deploy2UAT'){
+ 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credts', path: '', url: 'http://10.0.0.84:8080')], contextPath: 'tomcat', war: 'target/*war'
  }
  stage('6Manualapproval'){
     sh "echo 'ready for review' "
@@ -23,14 +22,13 @@ node{
       }
   }
     stage('7deploy2Prod'){
- 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://100.26.217.86:8080/')], contextPath: null, war: 'target/*war'
+ 	 deploy adapters: [tomcat9(credentialsId: 'tomcat-credts', path: '', url: 'http://10.0.0.84:8080')], contextPath: 'tomcat', war: 'target/*war'
  }
   stage('8emailNotify'){
   	emailext body: '''Hello Team,
 
 Build is done.
 
-LANDMARKTECH''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'mylandmarktech@gmail.com'
-  }
- */  
+LANDMARKTECH''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'simplicetajeken@yahoo.fr'
+  }  
 }
