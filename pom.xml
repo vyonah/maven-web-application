@@ -89,13 +89,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Tesla-release</name>
-	      <url>http://34.204.60.14:8081/repository/paypal-releases/</url>
+	      <url>http://10.0.0.82:8081/repository/paypal-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Tesla-snapshot</name>
-	      <url>http://34.204.60.14:8081/repository/paypal-snapshots/</url>
+	      <url>http://10.0.0.82:8081/repository/paypal-shopshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
