@@ -40,7 +40,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		+1 437 215 2483,
 		mylandmarktech@gmail.com
 		<br>
-		<a href="mailto:mylandmarktech@gmail.com">Mail to Landmark Technologies</a>
+		<a href="mailto:simplicetajeken@yahoo.fr">Mail to Landmark Technologies</a>
 	</span>
 </div>
 <hr>
@@ -48,7 +48,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <hr>
 <p align=center> Landmark Technologies - Consultant, Training and Software Development</p>
-<p align=center><small>Copyrights 2021 by <a href="http://mylandmarktech.com/">Landmark Technologies</a> </small></p>
+<p align=center><small>Copyrights 2023 by <a href="http://mylandmarktech.com/">Landmark Technologies</a> </small></p>
 
 </body>
 </html>
