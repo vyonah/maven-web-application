@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.0.4</version> 
+	<version>0.0.4-SNAPSHOT</version> 
 	
 	<name>maven-web-application</name>
 
@@ -88,13 +88,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Tesla-release</name>
+	      <name>paypal-releases</name>
 	      <url>http://10.0.0.82:8081/repository/paypal-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Tesla-snapshot</name>
+	      <name>paypal-shopshots</name>
 	      <url>http://10.0.0.82:8081/repository/paypal-shopshots/</url>
 	    </snapshotRepository>
 	    
