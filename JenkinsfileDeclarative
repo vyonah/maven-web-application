@@ -4,7 +4,7 @@ agent any
 
 tools
 {
-  maven 'maven3.6.3'
+  maven 'MAVEN3.9.1'
 
 }
 
@@ -14,7 +14,7 @@ triggers{
 
 options{
     timestamps()
-    buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2'))
+    //buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2'))
 }
 
  stages{
@@ -22,7 +22,7 @@ options{
    stage('CheckoutCode')
    {
      steps{
-	 git branch: 'development', credentialsId: '8e348aa2-9531-4dbe-863d-1adb64897470', url: 'https://github.com/LandmakTechnology/maven-web-application.git'
+	 git 'https://github.com/simplo78/maven-web-application.git'
 	 }
    }
    
@@ -50,8 +50,7 @@ options{
   stage('DeployAppIntoTomcat')
  {
    steps{
-  sshagent(['2b7b0c6a-5eff-4f4a-82c3-3630f91c70b5']) {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.1.222.74:/opt/apache-tomcat-9.0.41/webapps/"
+  deploy adapters: [tomcat9(credentialsId: 'tomcat-credts', path: '', url: 'http://10.0.0.84:8080')], contextPath: 'tomcat', war: 'target/*war'
   }
  }
  }
@@ -64,7 +63,7 @@ options{
  
  
  success{
- mail bcc: 'mylandmarktech@gmail.com', body: '''BuildOver!....
+ mail bcc: 'simplicetajeken@yahoo.fr', body: '''BuildOver!....
 
  Regards,
  Landmark Technologies,
