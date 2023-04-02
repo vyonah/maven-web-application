@@ -44,15 +44,11 @@ pipeline{
    
    stage('EmailNotify') {
     success{
-emailext body: '''Great job team.
+emailext body: 'Great job team!', subject: 'Success', to: 'simplicetajeken@yahoo.fr'
 
-LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
-
-    }
+   }
     failure{
-emailext body: '''Please review this job.
-
-LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build failed', to: 'mylandmarktech@gmail.com'
+emailext body: 'Team please review the build', subject: 'Failure', to: 'simplicetajeken@yahoo.fr'
 
     }
     
