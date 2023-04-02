@@ -42,14 +42,7 @@ pipeline{
         }
    }
    
-   stage('5deploy') {
-post{ 
-    always{
-emailext body: '''Great job team.
-
-LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
-
-    }
+   stage('EmailNotify') {
     success{
 emailext body: '''Great job team.
 
