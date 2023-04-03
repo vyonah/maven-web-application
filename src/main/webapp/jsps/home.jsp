@@ -9,9 +9,9 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Flash-pay the fastest global money transfer app.</h1>
-<h1 align="center">We offer urgency and deligence with the click of a button
-	           Thank you for using Flash-pay.</h1>
+<h1 align="center">Welcome to JIT where speed and reliabilty is key.</h1>
+<h1 align="center">We move goods from point a to point b just with the click of a button
+	           Thank you for using JIT.</h1>
 	
 <hr>
 <br>
