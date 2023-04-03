@@ -1,0 +1,31 @@
+node{
+  def mavenHome = tool name: 'maven3.9.1'
+ stage('1.CodeClone'){
+ git credentialsId: 'gitHubCredentials', url: 'https://github.com/Akanji3/maven-web-application'
+   }
+ stage('2MavenBuild'){
+   sh "${mavenHome}/bin/mvn package"
+ }
+ stage('3codeQuality'){
+   sh "${mavenHome}/bin/mvn sonar:sonar"
+ }
+ stage('4UploadArtifacts'){
+   sh "${mavenHome}/bin/mvn deploy"
+ }
+  stage('5deploy2UAT'){
+  
+ stage('6Manualapproval'){
+    sh "echo 'Application is ready for review' "
+    timeout(time:5, unit:'HOURS') {
+    input message: 'Application is ready for deployment,please review and approve'
+  }
+   stage('7deploy2Prod'){
+   deploy adapters: [tomcat9(credentialsId: 'ddd4be25-2aeb-4515-9d78-c216e6260da8', path: '', url: 'http://44.211.119.163:8177/')], contextPath: null, war: 'target/*war'
+  }
+ stage('8emailNotify'){
+ emailext body: '''Hello Team.
+
+Application ready for Deployment''', subject: 'Build Done', to: 'christabelakanji@gmail.com'
+    }
+  }
+ }
