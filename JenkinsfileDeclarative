@@ -49,36 +49,22 @@ options{
 	 }
    }
    
-  stage('DeployAppIntoTomcat')
- {
+  stage('DeployAppIntoTomcat'){
    steps{
   deploy adapters: [tomcat9(credentialsId: 'tomcat-credts', path: '', url: 'http://10.0.0.84:8080')], contextPath: 'tomcat', war: 'target/*war'
-  }
- }
- }
- 
-  
- 
+     }
  }
  
  post{
- 
- 
  success{
- mail bcc: 'simplicetajeken@yahoo.fr', body: '''BuildOver!....
+emailext body: ' Hello engineers, the build has been successfully completed', subject: 'Build succeeded', to: 'simplicetajeken@yahoo.fr'
 
- Regards,
- Landmark Technologies,
- 9980923226''', cc: 'mylandmarktech@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'mylandmarktech@gmail.com'
  }
  
  failure{
- mail bcc: 'devopstrainingblr@gmail.com', body: '''BuildOver!....
-
- Regards,
- Landmark Technologies,
- +1 437 215 2483,''', cc: 'mylandmarktech@gmail.com', from: '', replyTo: '', subject: 'BuildOver!!', to: 'mylandmarktech@gmail.com'
+ emailext body: ''' Greetings Engineers,
+ Please review the code and push again,
+Thanks''', subject: 'simplicetajeken@yahoo.fr', to: 'Build failure'
+   }
  }
- 
- }
-
+}
