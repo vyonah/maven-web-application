@@ -67,4 +67,5 @@ emailext body: ' Hello engineers, the build has been successfully completed', su
 Thanks''', subject: 'simplicetajeken@yahoo.fr', to: 'Build failure'
    }
  }
+
 }
