@@ -26,7 +26,7 @@ pipeline{
     steps{
         sh "echo setup sonarQube authentication"
         sh "echo 'Perfoming CodeQualityAnalysis' "
-        sh "mvn sonar:sonar"      
+        //sh "mvn sonar:sonar"      
     }
    }
    stage('4UploadArtifacts') {
@@ -36,6 +36,7 @@ pipeline{
       sh "echo artifacts uploaded"
     }
    }
+   /*
      stage('5deploy') {
     steps{
       deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://100.26.217.86:8080/')], contextPath: null, war: 'target/*war'
@@ -43,6 +44,7 @@ pipeline{
    }
    
    //stage('5deploy') {}
+   */
   }
 post{ 
     always{
