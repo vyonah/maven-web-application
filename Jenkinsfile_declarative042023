@@ -43,15 +43,15 @@ pipeline{
         }
    }
    
-   //stage('5deploy') {}
-   */
+   //stage('5deploy'){}
   }
-  
+ }
 post{ 
     always{
 emailext body: '''Great job team.
 
 LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
+    
     }
     success{
 emailext body: '''Great job team.
