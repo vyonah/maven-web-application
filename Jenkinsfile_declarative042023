@@ -44,7 +44,7 @@ pipeline{
    }
    
    //stage('5deploy') {}
-  }
+ }
 post{ 
     always{
 emailext body: '''Great job team.
