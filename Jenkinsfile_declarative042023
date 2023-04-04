@@ -43,9 +43,9 @@ pipeline{
         }
    }
    
-   //stage('5deploy') {}
+   //stage('5deploy'){}
   }
-  
+ }
 post{ 
     always{
 emailext body: '''Great job team.
@@ -64,6 +64,7 @@ emailext body: '''Please review this job.
 LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build failed', to: 'mylandmarktech@gmail.com'
 
     }
+    }    
 }
 */
 }
