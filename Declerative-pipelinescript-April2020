@@ -1,0 +1,51 @@
+pipeline{
+agent{
+label'buildNode'
+}
+tools{
+maven 'maven3.9.1'
+}
+//option{}
+//triggers{}
+stages{
+stage('1 Clone'){
+steps{
+sh "echo 'cloning the latest application version' "
+git "https://github.com/LandmakTechnology/maven-web-application"
+sh "echo 'latest application version available for testing and build' "
+  }
+  }
+  stage('2TestBuild'){
+      steps{
+        sh "echo 'running JUnit-test-cases' "
+        sh "echo 'testing must passed to create artifacts ' "
+        sh "mvn clean package" 
+ }
+}
+  stage('3CodeQualityAnalysis'){
+steps{
+sh "echo setup sonarQube authentication"
+sh "echo 'Perfoming CodeQualityAnalysis' "
+//sh "mvn sonar:sonar"      
+    }
+   }
+  stage('4UploadArtifacts') {
+    steps{
+      sh "echo configure nexus authentication"
+      //sh "mvn deploy"
+      sh "echo artifacts uploaded"
+     // deploy adapters: [tomcat9(credentialsId: 'ddd4be25-2aeb-4515-9d78-c216e6260da8', path: '', url: 'http://3.237.193.244:8177/')], contextPath: null, war: 'target/*war'
+    }
+   } 
+  stage('5deploy') {
+    steps{ 
+deploy adapters: [tomcat9(credentialsId: 'ddd4be25-2aeb-4515-9d78-c216e6260da8', path: '', url: 'http://3.237.193.244:8177/')], contextPath: null, war: 'target/*war'
+  }
+ }
+}
+  post{ 
+    always{
+ emailext body: 'please review this job. ', recipientProviders: [contributor(), developers(), buildUser()], subject: 'Build Success', to: 'christabelakanji@gmail.com'
+ }
+ }
+}
