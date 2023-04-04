@@ -26,7 +26,7 @@ pipeline{
     steps{
         sh "echo setup sonarQube authentication"
         sh "echo 'Perfoming CodeQualityAnalysis' "
-        sh "mvn sonar:sonar"      
+        //sh "mvn sonar:sonar"      
     }
    }
    stage('4UploadArtifacts') {
@@ -36,6 +36,7 @@ pipeline{
       sh "echo artifacts uploaded"
     }
    }
+   /*
      stage('5deploy') {
     steps{
       deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://100.26.217.86:8080/')], contextPath: null, war: 'target/*war'
@@ -44,12 +45,12 @@ pipeline{
    
    //stage('5deploy') {}
   }
+  
 post{ 
     always{
 emailext body: '''Great job team.
 
 LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
-
     }
     success{
 emailext body: '''Great job team.
@@ -63,7 +64,6 @@ emailext body: '''Please review this job.
 LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build failed', to: 'mylandmarktech@gmail.com'
 
     }
-    
 }
-
+*/
 }
