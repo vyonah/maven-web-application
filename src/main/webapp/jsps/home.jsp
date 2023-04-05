@@ -9,9 +9,9 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to JIT delivery services where speed and reliabilty is key.</h1>
-<h1 align="center">We move goods from point a to point b just with the click of a button,
-	           Thank you for using JIT.</h1>
+<h1 align="center">Welcome to Ultimate Holdings, a conglomerate of multiple companies.</h1>
+<h1 align="center">We have Ultimate wealth, VAM-VAM logistics, Ultimate Agriculture, Ultimate Real Estates.
+	           Thank you for trusting Ultimate Holdings.</h1>
 	
 <hr>
 <br>
