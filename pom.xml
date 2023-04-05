@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>JIT</finalName>
+		<finalName>Ultimate Holdings</finalName>
 		
 		<plugins>
 			<plugin>
