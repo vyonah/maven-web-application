@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Ultimate Holdings, a conglomerate of multiple companies.</h1>
-<h1 align="center">We have Ultimate wealth, VAM-VAM logistics fast movement of products from point A to B, Ultimate Agriculture, Ultimate Real Estates.
+<h1 align="center">We have Ultimate wealth number 1 nwtwork marketing company in Africa, VAM-VAM logistics fast movement of products from point A to B, Ultimate Agriculture, Ultimate Real Estates.
 	           Thank you for trusting Ultimate Holdings.</h1>
 	
 <hr>
