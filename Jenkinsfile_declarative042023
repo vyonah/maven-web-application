@@ -42,7 +42,7 @@ pipeline{
         }
    }
    
-   stage('5deploy') {}
+   //stage('5deploy') {}
   }
 post{ 
     always{
