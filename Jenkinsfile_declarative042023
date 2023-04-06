@@ -32,7 +32,7 @@ pipeline{
    stage('4UploadArtifacts') {
     steps{
       sh "echo configure nexus authentication"
-      //sh "mvn deploy"
+      sh "mvn deploy"
       sh "echo artifacts uploaded"
     }
    }
@@ -42,7 +42,7 @@ pipeline{
         }
    }
    
-   //stage('5deploy') {}
+   stage('5deploy') {}
   }
 post{ 
     always{
