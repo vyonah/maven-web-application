@@ -47,7 +47,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <hr>
 <p align=center> Aren's software solution - Consultant, Training and Software Development</p>
-<p align=center><small>Copyrights 2021 by <a href="http://aren'ssoftwaresolution.com/">Landmark Technologies</a> </small></p>
+<p align=center><small>Copyrights 2021 by <a href="http://aren'ssoftwaresolution.com/">Aren Technologies</a> </small></p>
 
 </body>
 </html>
