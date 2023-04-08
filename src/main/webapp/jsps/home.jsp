@@ -9,9 +9,9 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Tesla Web application Project30 automation.</h1>
-<h1 align="center">We are developing and supporting quality Software Solutions to millions of clients globally.
-	           We are raising millionaires in IT automation.
+<h1 align="center">Welcome to Aren's software solution.</h1>
+<h1 align="center">We are developing and supporting quality Software Solutions to millions of fintech clients globally.
+	           We are deploying millionaires in IT automation. 
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.</h1>
 <hr>
 <br>
@@ -34,10 +34,10 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/mylandmarklogo.png" alt="" width="150">
 	</span>
 	<span style="font-weight: bold;">
-                Landmark Technology, 
-		Toronto, Canada
-		+1 437 215 2483,
-		mylandmarktech@gmail.com
+                Aren's software solution, 
+		London, united kindom
+		+7867 903534,
+		benefitesiri098@gmail.com
 		<br>
 		<a href="mailto:mylandmarktech@gmail.com">Mail to Landmark Technologies</a>
 	</span>
@@ -46,8 +46,8 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center> Landmark Technologies - Consultant, Training and Software Development</p>
-<p align=center><small>Copyrights 2021 by <a href="http://mylandmarktech.com/">Landmark Technologies</a> </small></p>
+<p align=center> Aren's software solution - Consultant, Training and Software Development</p>
+<p align=center><small>Copyrights 2021 by <a href="http://aren'ssoftwaresolution.com/">Landmark Technologies</a> </small></p>
 
 </body>
 </html>
