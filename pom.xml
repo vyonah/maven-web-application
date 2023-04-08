@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://54.244.39.237:8081/repository/amazon-releases/</url>
+	      <url>http://54.187.10.178:8081/repository/amazon-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.244.39.237:8081/repository/amazon-snapshot//</url>
+	      <url>http://54.187.10.178:8081/repository/amazon-snapshot//</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
