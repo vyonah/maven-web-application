@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
+	<artifactId>maven-web-applications</artifactId>
 	<packaging>war</packaging>
 	
 	<version>0.0.2-SNAPSHOT</version> 
@@ -93,13 +93,13 @@
 	</dependencies>
 	<distributionManagement>
 	    <repository>
-	      <id>nexus</id>
+	      <id>nexusrepo</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
 	      <url>http://54.187.10.178:8081/repository/amazon-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
-	      <id>nexus</id>
+	      <id>nexusrepo</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
 	      <url>http://54.187.10.178:8081/repository/amazon-snapshot//</url>
 	    </snapshotRepository>
