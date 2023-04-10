@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>Ultimate Holdings</finalName>
+		<finalName>CCA</finalName>
 		
 		<plugins>
 			<plugin>
