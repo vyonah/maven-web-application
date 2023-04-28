@@ -35,7 +35,7 @@ pipeline{
       steps{
         sh "echo creating docker image"
         sh "docker build -t simplo78/mylandmarktech/maven-web-appp . "
-        sh "docker push simplo78/projectrepo"
+        sh "docker push simplo78/mylandmarktech/maven-web-appp"
       }
     }
     stage('UnDeploy'){
