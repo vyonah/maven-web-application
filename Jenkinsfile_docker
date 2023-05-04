@@ -5,7 +5,7 @@ pipeline{
   }
   stages{
     stage('GitClone'){
-      steps
+      steps{
         echo "cloning the lastest applications version"
         git "https://github.com/simplo78/maven-web-application.git"
       }
@@ -55,4 +55,5 @@ pipeline{
       sh "echo deployment successful"
     }
   }
+}
 }
