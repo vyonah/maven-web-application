@@ -55,6 +55,4 @@ pipeline{
       sh "echo deployment successful"
     }
   }
-
-  }
 }
