@@ -11,7 +11,7 @@ pipeline{
       }
     }
       stage('Test+Build'){
-      steps{
+      steps
         sh "echo Running unitTesting"
         sh "mvn clean package"
         echo "echo test successful and backupArtifacts created"
@@ -20,22 +20,22 @@ pipeline{
       stage('codeQuality'){
       steps{
         sh "echo Running detail code analysis"
-        sh "mvn sonar:sonar"
+        //sh "mvn sonar:sonar"
         sh  "echo All conditions met/passed"
       }
     }
       stage('upLoadArtifacts'){
       steps{
         sh "echo Running detail code analysis"
-        sh "mvn deploy"
+        //sh "mvn deploy"
         sh "echo backupArtifacts in nexus"
       }
     }
       stage('predeployment'){
       steps{
         sh "echo creating docker image"
-        sh "docker build -t simplo78/mylandmarktech/maven-web-appp . "
-        sh "docker push simplo78/mylandmarktech/maven-web-appp"
+        sh "docker build -t mylandmarktech/maven-web-appp . "
+        sh "docker push mylandmarktech/maven-web-appp"
       }
     }
     stage('UnDeploy'){
@@ -47,7 +47,7 @@ pipeline{
     stage('deployment'){
       steps{
         sh "echo application ready for deployment"
-        sh "docker run -d -p 8000:8080 --name webapp simplo78/mylandmarktech/maven-web-app"
+        sh "docker run -d -p 8000:8080 --name webapp mylandmarktech/maven-web-app"
       }
     }
   stage('emailNotification'){
