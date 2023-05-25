@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>CCA</finalName>
+		<finalName>tesla</finalName>
 		
 		<plugins>
 			<plugin>
