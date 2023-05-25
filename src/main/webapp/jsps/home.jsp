@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to CCA bank, the best bank for you.</h1>
-<h1 align="center">We offer best client ecperience, security is guaranteed, .
+<h1 align="center">We offer best client experience, security is guaranteed.
 	           Thanks for trusting CCA bank.</h1>
 	
 <hr>
