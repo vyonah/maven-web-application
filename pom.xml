@@ -101,7 +101,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>ttp://52.207.26.54:8181/quamzanexus/repository/tesla-snapshot1/</url>
+	      <url>http://52.207.26.54:8181/quamzanexus/repository/tesla-snapshot1/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
