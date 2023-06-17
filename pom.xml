@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla-webb</finalName>
+		<finalName>tesla-webb-app</finalName>
 		
 		<plugins>
 			<plugin>
