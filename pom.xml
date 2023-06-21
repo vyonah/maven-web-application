@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>motorala</finalName>
+		<finalName>landmarktekk</finalName>
 		
 		<plugins>
 			<plugin>
