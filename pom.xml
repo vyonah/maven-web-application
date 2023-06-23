@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla-web-app</finalName>
+		<finalName>tesla-web-app1</finalName>
 		
 		<plugins>
 			<plugin>
