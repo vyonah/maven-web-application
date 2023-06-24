@@ -37,6 +37,4 @@ node('wallmart-node'){
    Landmark Technologies,
    9980923226''', subject: 'Build Over... !!', to: 'mylandmarktech@gmail.com'
  }
- 
- 
 }
