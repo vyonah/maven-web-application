@@ -14,7 +14,7 @@ node{
   }
 
   stage('5Deploy'){
-    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://35.183.40.144:8177/')], contextPath: null, war: 'target/*war'
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://15.156.86.201:8177/')], contextPath: null, war: 'target/*war'
   }
   stage('6Notification'){
     emailext body: '''Hi Team,
