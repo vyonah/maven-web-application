@@ -30,6 +30,6 @@ deploy adapters: [tomcat9(credentialsId: 'tomcat9', path: '', url: 'http://15.15
     emailext body: '''Build status for frontend application.
 
 Regards,
-Landmark Technologies''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build Status', to: 'paypal-team@gmail.com'
+Landmark Technologies''', recipientProviders: [buildUser(), developers(), subject: 'Build Status', to: 'paypal-team@gmail.com'
  }
 }  
