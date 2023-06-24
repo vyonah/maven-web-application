@@ -25,11 +25,7 @@ deploy adapters: [tomcat9(credentialsId: 'tomcat9', path: '', url: 'http://15.15
  stage('7deploy_prod'){
 deploy adapters: [tomcat9(credentialsId: 'tomcat9', path: '', url: 'http://15.156.86.201:8177/')], contextPath: null, war: 'target/*war'
  }
- stage('8Notification'){
-    // Pipeline Syntax 
-    emailext body: '''Build status for frontend application.
-
-Regards,
-Landmark Technologies''', recipientProviders: [buildUser(), developers(), subject: 'Build Status', to: 'paypal-team@gmail.com'
- }
-}  
+ stage('8Notification') {
+   emailextrecipients([contributor(), developers(), requestor(), previous()])
+}
+}
