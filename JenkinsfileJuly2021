@@ -17,7 +17,7 @@ node{
  }
  stage('DeployAppIntoTomcatServer')
  {
-  sh "deploy adapters: [tomcat9(credentialsId: 'tomcat9', path: '', url: 'http://35.183.40.144:8177/')], contextPath: null, war: 'target/*war'"
+  //sh "deploy adapters: [tomcat9(credentialsId: 'tomcat9', path: '', url: 'http://35.183.40.144:8177/')], contextPath: null, war: 'target/*war'"
  }
  stage('SendEmailNotification'){
 emailext body: 'please review', recipientProviders: [culprits(), developers(), brokenBuildSuspects(), contributor()], subject: 'script build', to: 'Developers'
