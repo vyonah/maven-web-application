@@ -6,7 +6,7 @@ git "https://github.com/solunwa/maven-web-application"
 //bat "https://github.com/solunwa/maven-web-application"
 }
 stage('2.Build +Test'){
-sh "${mavenHome}/bin/mvn package"
+sh "${mavenHome}/bin/mvn clean package"
 }
 stage ('3.CodeQualityAnalysis'){
 	sh "${mavenHome}/bin/mvn sonar:sonar"
