@@ -19,7 +19,7 @@ stage('5.deploy2UAT'){
 }
 stage('6.Approval'){
 	sh "echo 'apps ready for review' "
-	timeout(time:5, unit: 'HOURS')
+	timeout(time:5, unit: 'MINUTES')
 	input message: 'Application ready for deployment, Plesae revie w and approve'
 }
 stage('7.production'){
