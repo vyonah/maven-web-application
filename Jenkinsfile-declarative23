@@ -1,7 +1,7 @@
 pipeline{
   agent any  
   tools {
-    maven "maven3.8.2"
+    maven "maven3.9.2"
   }
   //options {}  
   //triggers {}
@@ -9,7 +9,7 @@ pipeline{
     stage('1clone'){
       steps{
         sh "echo ready to automate build"
-        git 'https://github.com/LandmakTechnology/maven-web-application'
+        git 'https://github.com/Kin-Marius/maven-web-application.git'
         sh "echo latest application version collected from SCM"
       }   
     }
@@ -36,7 +36,7 @@ pipeline{
     }
     stage('5deployment'){
       steps{
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.166.85.32:8177/')], contextPath: null, war: 'target/*war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.208.41.82:8177/')], contextPath: null, war: 'target/*war'
         sh "echo deployment to production completed successfully"
       }       
     }
