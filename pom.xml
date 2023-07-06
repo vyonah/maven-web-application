@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>duracell</finalName>
+		<finalName>dura</finalName>
 		
 		<plugins>
 			<plugin>
