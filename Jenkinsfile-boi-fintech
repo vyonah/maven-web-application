@@ -1,0 +1,40 @@
+node{
+  def mavenHome = tool name: 'maven3.9.0'
+  stage('1Clone Code'){
+     git branch: 'feature', credentialsId: 'GITHUB-CREDENTIALS', url: 'https://github.com/starlightng/maven-web-application.git'
+  }
+  stage('2BuildArtifact'){
+     sh "${mavenHome}/bin/mvn clean package"
+     //bat 'mvn package'
+  }
+    /*stage('3.CodeQuality'){
+    sh "${mavenHome}/bin/mvn sonar:sonar" 
+  }
+  stage('4.UploadArtifacts'){
+    sh "${mavenHome}/bin/mvn deploy"
+  }
+  */
+  stage('5.Deploy2UAT'){
+    sshagent(['Tomcat-Key']) {
+    sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@44.203.69.59:/opt/tomcat9/webapps/aut-app.war"
+  }
+  stage('6.Approval'){
+    timeout(time:5, unit: 'HOURS'){
+    input message: 'Kindly Review UAT and Approve for Production'
+  }
+  stage('7.Deploy2Prod'){
+    deploy adapters: [tomcat9(credentialsId: 'Tomcat-Credentials', path: '', url: 'http://54.84.20.7:8080/')], contextPath: null, war: 'target/*.war'
+ }
+ stage('8.EmailPush'){
+    emailext body: '''Hello all,
+
+Kindly access the backend, or review subject matter for necessary feedback
+
+Regards.
+
+LWP- Project Lead
++2349023457341''', subject: 'Boi Project  Build Status', to: 'starlightcommsng@gmail.com, isimichael@hotmail.com'
+}
+}
+}
+}
