@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "demo",
+			"path": "../Downloads/Docker/demo"
+		}
+	],
+	"settings": {
+		"DockerRun.DisableDockerrc": true
+	}
+}
