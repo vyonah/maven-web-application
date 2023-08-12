@@ -6,7 +6,6 @@ node{
   stage('2Test+build'){
     sh "${mavenHome}/bin/mvn clean package"
   }
-/*
   stage('3SonarQube'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
   }
@@ -22,5 +21,4 @@ node{
 Build status
 Landmark Technologies''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
   }
-*/
 }
