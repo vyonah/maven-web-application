@@ -2,6 +2,8 @@ node{
   def mavenHome = tool name: 'maven 3.9.2'
   stage('1Clone'){
    git credentialsId: 'Github', url: 'https://github.com/Landmark-Tech-C32-G26/maven-web-application'
+   //git credentialsId: 'Github', url: 'https://github.com/Landmark-Tech-C32-G26/maven-web-app'
+
   }
   stage('2Test+build'){
     sh "${mavenHome}/bin/mvn clean package"
