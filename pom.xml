@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://54.87.74.105:8081/repository/LWP-AgriTech-Releases/</url>
+	      <url>http://100.25.188.140:8081/repository/boi-fintech-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.87.74.105:8081/repository/LWP-AgriTech-Snapshots/</url>
+	      <url>http://100.25.188.140:8081/repository/bio-fintech-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
