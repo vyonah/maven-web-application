@@ -33,7 +33,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/LWP Logo.png" alt="" width="150">
 	</span>
 	<span style="font-weight: bold;">
-                LearnWithPride Solutions, 
+                LearnWithPride Corporate Solutions, 
 		United Kingdom
 		+44 437 215 2483, +234 (0)803 833 4409
 		learnwithpride@gmail.com
