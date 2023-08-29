@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to LearnWithPride Solutions, London, UK Office.</h1>
+<h1 align="center">Welcome to LearnWithPride Solutions, London, United Kingdom Office.</h1>
 <h1 align="center">Presently with over 200 Clients, We Develop and support Quality  Software Solutions to Millions of Clients.
 	We offer The Best Training for DevOps with Linux and Cloud, Equipping IT Engineers for Best Performance. We are the Best</h1>
 <hr>
