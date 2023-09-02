@@ -1,13 +1,13 @@
 node{
-  def mavenHome = tool name: 'maven3.8.2'
+  def mavenHome = tool name: 'maven3.9.2'
   stage('1Clone'){
-    git 'https://github.com/LandmakTechnology/maven-web-application'
+    git 'https://github.com/banjisama/maven-web-application.git'
   }
   stage('2Test+build'){
     sh "${mavenHome}/bin/mvn clean package"
   }
-/*
-  stage('SonarQube'){
+
+  stage('3SonarQube'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
   }
   stage('4UploadArtifacts'){
@@ -15,12 +15,27 @@ node{
   }
 
   stage('5Deploy'){
-    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.166.85.32:8177/')], contextPath: null, war: 'target/*war'
+    deploy adapters: [tomcat9(credentialsId: 'tomcatID', path: '', url: 'http://3.85.146.60:8080/')], contextPath: null, war: 'target/*war'
+  
   }
-  stage('6Notification'){
+ 
+ stage('6Approval'){ 
+sh "echo 'apps ready for review' "
+timeout(time:5, unit:'HOURS') {
+input message: 'applicaion ready for deployment, please review and approve'
+}
+
+stage('7DeployToProd'){
+   deploy adapters: [tomcat9(credentialsId: 'tomcatID', path: '', url: 'http://3.85.146.60:8080/')], contextPath: null, war: 'target/*war' 
+  }
+
+}
+  stage('8Notification'){
     emailext body: '''Hi Team,
 Build status
 Landmark Technologies''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
-  }
-*/
+
+    
+}
+  
 }
