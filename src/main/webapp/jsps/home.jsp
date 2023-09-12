@@ -9,9 +9,9 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Tesla Web application Dubai23 Project.</h1>
+<h1 align="center">Welcome to Tesla Web application Project.</h1>
 <h1 align="center">We are developing and supporting quality Software Solutions to millions of clients globally.
-	           We are raising millionaires in IT automation.
+	           We are raising millionaires and Billionaires in IT Professionals in over 50 Nations.
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.
 	Class34 DevOps MasterClass will start on oct 14, 2023. </h1>
 <hr>
