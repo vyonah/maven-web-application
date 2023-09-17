@@ -95,13 +95,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://54.81.17.105:8181/jrquality/repository/teslaartifacts-ReleasesRepo/</url>
+	      <url>http://18.232.141.233:8181/jrquality/repository/teslaartifacts-ReleasesRepo/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.81.17.105:8181/jrquality/repository/teslaartifacts-SnapshotRepo/</url>
+	      <url>http://18.232.141.233:8181/jrquality/repository/teslaartifacts-SnapshotRepo/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
