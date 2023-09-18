@@ -9,6 +9,7 @@ node{
     }
     stage('2.mvnBuild'){
         sh "${mavenHome}/bin/mvn clean package"
+/* 
     }
     stage('3.CodeQuality'){
         //sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -50,6 +51,11 @@ The build and Deployment status for tesla-app follows.
 Regards,
 Landmark Technologies ''', recipientProviders: [buildUser(), contributor(), developers(), requestor()], subject: 'build and deployment status', to: 'mylandmarktech@gmail.com'
 
-    }
+     }
+
+*/ 
+//
+
 }
+
 
