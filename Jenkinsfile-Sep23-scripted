@@ -5,7 +5,7 @@ node{
         //sh "git clone https://github.com/LandmakTechnology/maven-web-application"
         git "https://github.com/LandmakTechnology/maven-web-application"
         //Jenkins running on a windows system
-        //bat "git clone https://github.com/LandmakTechnology/maven-web-application"  
+        //bat "git clone https://github.com/taiwoabbey147/maven-web-application"  
     }
     stage('2.mvnBuild'){
         sh "${mavenHome}/bin/mvn clean package"
