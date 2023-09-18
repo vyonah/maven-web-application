@@ -9,6 +9,7 @@ node{
     }
     stage('2.mvnBuild'){
         sh "${mavenHome}/bin/mvn clean package"
+    }
 /* 
     }
     stage('3.CodeQuality'){
@@ -52,7 +53,6 @@ Regards,
 Landmark Technologies ''', recipientProviders: [buildUser(), contributor(), developers(), requestor()], subject: 'build and deployment status', to: 'mylandmarktech@gmail.com'
 
      }
-
 */ 
 //
 
