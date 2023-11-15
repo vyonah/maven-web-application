@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.91.157.29:8081/repository/venture-ai-releases/</url>
+	      <url>http://35.173.211.226:8081/repository/boa-fintech-snapshot/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.91.157.29:8081/repository/venture-ai-snapshots/</url>
+	      <url>http://35.173.211.226:8081/repository/boa-fintech-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
