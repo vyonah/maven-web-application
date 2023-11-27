@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    tools{
+      maven "maven3.9.5"
+    }
+    stages{
+      stage('1.GitClone'){
+        steps{
+          sh "echo cloning code from github"
+          git 'https://github.com/starlightng/maven-web-application.git'
+        }
+      }
+      stage('2.BuildArtefact'){
+        steps{
+          sh "echo Validate, Test Compile, and Build Artefacts"
+          sh "mvn clean package"
+          sh "echo Build Successful"
+        }
+      }
+      stage('3.DeployWar/Ear2Tomcat'){
+        steps{
+          sh "echo Deploying Built Artefact to Tomcat"
+          deploy adapters: [tomcat9(credentialsId: 'TomcatCredentials', path: '', url: 'http://54.146.100.46:8080/')], contextPath: null, war: 'target/*.war'
+        }
+      }
+      stage('4.EmailNotifications'){
+        steps{
+          sh "echo Sending Build Status via Email"
+          emailext body: 'Kindly Check build status.', subject: 'Build Status', to: 'okikiayas@gmail.com, starlightcommsng@gmail.com'
+        }
+      }
+    }
+}
