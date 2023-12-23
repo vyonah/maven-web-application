@@ -1,0 +1,58 @@
+node{
+  def mavenHome = tool name: 'maven3.9.6'  
+	stage('1.clonecode'){
+	git "https://github.com/Abbyabiola001/maven-web-applicationbb.git"
+
+}
+stage('2.mavenBuild'){
+	  sh "${mavenHome}/bin/mvn package"
+  }
+
+stage('3.codeQualityAnalysis'){
+	  sh "${mavenHome}/bin/mvn sonar:sonar"
+  }
+  
+  stage('4.BuildArtifact'){
+	  sh "${mavenHome}/bin/mvn deploy"
+  }
+  
+  stage('5.deploy2UAT'){
+      //use deploy to container pluging
+deploy adapters: [tomcat9(credentialsId: 'tomcatcred', path: '', url: 'http://3.129.248.156:8088')], contextPath: null, war: 'target/*war'
+
+  }
+  
+   stage('6.manualApproval'){
+	  sh "echo 'Please review and approve' "
+	  timeout(time:100, unit: 'MINUTES')
+  {
+	  input message: 'Application is ready for deployment, please review'
+	}
+  }
+  
+  stage('7.deploy2Prod'){
+      //use deploy to container pluging
+deploy adapters: [tomcat9(credentialsId: 'tomcatcred', path: '', url: 'http://3.129.248.156:8088')], contextPath: null, war: 'target/*war'
+
+ }
+ 
+ stage('8.monitoring and observation'){
+	  sh "echo 'Monitoring and alerting' "
+	   sh "echo 'application performance monitoring and alerting in progress' "
+ 
+ stage('9.notification'){
+	  sh "echo 'create email  notification is there is any issue' "
+	//use pipeline syntax and email notification
+	emailext body: 'Please check the pipeline build failure and rectify as soon as possible. Thank you', recipientProviders: [developers(), upstreamDevelopers(), contributor()], subject: 'job status', to: 'bimbimabiola@gmail.com'
+   }
+
+ }
+
+}
+
+
+
+
+  
+  
+
