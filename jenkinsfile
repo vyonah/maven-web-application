@@ -1,5 +1,5 @@
 node{
-  def mavenHome = tool name: 'maven3.9.6'  
+  def mavenHome = tool name: 'maven3.9.0'  
 	stage('1.clonecode'){
 	git "https://github.com/Abbyabiola001/maven-web-applicationbb.git"
 
