@@ -91,17 +91,18 @@
 			<scope>provided</scope>
 		</dependency>	
 	</dependencies>	
+
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.137.166.218:8081/repository/tesla-releases/</url>
+	      <url>http://18.117.122.177:8081/repository/tesla-fe-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.137.166.218:8081/repository/tesla-snapshots/</url>
+	      <url>http://18.117.122.177:8081/repository/tesla-fe-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
