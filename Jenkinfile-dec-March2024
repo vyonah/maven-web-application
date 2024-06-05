@@ -9,7 +9,7 @@ pipeline{
     stage('1.CloneCode'){
       steps{
          sh  "echo cloning the latest app version"
-         git 'https://github.com/LandmakTechnology/maven-web-application'
+         git 'https://github.com/Devops Xpress/maven-web-application'
       }
     }
     stage('2.mvnBuild'){
@@ -40,7 +40,7 @@ pipeline{
       steps{
         sh "echo Deployment is ready for the client review"
         sh "echo using deploy to container plugin" 
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.30.76:8080/')], contextPath: null, war: 'target/*war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
 
       }
     }
@@ -57,7 +57,7 @@ pipeline{
     stage('7.Deploy2Prod'){
       steps{
         sh "echo application reviewed, approved and ready for the market" 
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://172.31.30.76:8080/')], contextPath: null, war: 'target/*war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
 
       }
     }
@@ -68,27 +68,27 @@ emailext body: '''Hi Team,
 
 Build status.
 
-Landmark Technologies.
-Tel: +1 437 215 2483
-''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'mylandmarktech@gmail.com'
+Devops Xpress.
+Tel: +1 773 272 1652
+''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'kobbyant123@gmail.com'
       }
       success{
          emailext body: '''Hi Team,
 
 Build succeeded.
 
-Landmark Technologies.
-Tel: +1 437 215 2483
-''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'mylandmarktech@gmail.com'
+Devops Xpress.
+Tel: +1 773 272 1652
+''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'kobbyant123@gmail.com'
       }
       failure{
          emailext body: '''Hi Team,
 
 Build failed.
 
-Landmark Technologies.
-Tel: +1 437 215 2483
-''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'mylandmarktech@gmail.com'
+Devop Xpress.
+Tel: +1 773 272 1652
+''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build status', to: 'kobbyant123@gmail.com'
 
       }
    } 
