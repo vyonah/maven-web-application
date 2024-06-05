@@ -6,7 +6,7 @@ pipeline{
       maven 'maven'
    }
    stages{
-    stage('1.CloneCode'){
+     stage('1.CloneCode'){
       steps{
          sh  "echo cloning the latest app version"
          git 'https://github.com/kobby2024/maven-web-application'
@@ -18,15 +18,12 @@ pipeline{
        sh "echo UnitTesting must passed for artifacts to be created"
        sh "mvn clean package"
       }
-}
-    }
-/*
+  }
     stage('3.CodeQuality'){
       steps{
          //sh "mvn sonar:sonar"
          sh "echo CodeQualityAnalysis completed"          
       }
-
     }
     stage('4.UploadArtifacts'){
       steps{
@@ -51,17 +48,16 @@ pipeline{
        timeout(time:5, unit:'DAYS'){
        input message: 'Application ready for deployment, Please review and approve'     
        }
- 
       }
     }
     stage('7.Deploy2Prod'){
       steps{
         sh "echo application reviewed, approved and ready for the market" 
         deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
-
       }
     }
    }
+/*
    post{
       always{
 emailext body: '''Hi Team,
