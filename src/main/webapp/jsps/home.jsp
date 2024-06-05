@@ -12,7 +12,7 @@
 <h1 align="center">We are developing and supporting quality Software Solutions to millions of clients globally.
 	We offer Training for DevOps with Linux, Kubernetes and Cloud, equipping IT Engineers for best performance.
         With DevOps Xpress we take our time to train
-	DevOps MasterClass ongoing May 2024.
+	DevOps MasterClass ongoing May 15th 2024.
         Please invite all your contacts and friends.
 </h1>
 <hr>
