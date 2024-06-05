@@ -46,7 +46,7 @@ node{
 The build and Deployment status for tesla-app follows.
 
 Regards,
-Landmark Technologies ''', recipientProviders: [buildUser(), contributor(), developers(), requestor()], subject: 'build and deployment status', to: 'mylandmarktech@gmail.com'
+Devops Xpress ''', recipientProviders: [buildUser(), contributor(), developers(), requestor()], subject: 'build and deployment status', to: 'mylandmarktech@gmail.com'
 
     }
 }
