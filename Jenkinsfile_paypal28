@@ -7,7 +7,6 @@ node{
  stage('2Test&Build'){
     sh "${mavenHome}/bin/mvn install"
  } 
- /*
  stage('3CodeQuality'){
   sh "${mavenHome}/bin/mvn sonar:sonar"
  }   
