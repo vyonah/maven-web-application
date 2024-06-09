@@ -22,7 +22,6 @@ node{
         input message: 'Application ready for deployment, Please review and approve'
     }
  }
-/*
  stage('7deploy_prod'){
      deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
  }
@@ -33,5 +32,4 @@ node{
 Regards,
 Devops Xpress''', recipientProviders: [buildUser(), developers(), contributor()], subject: 'Build Status', to: 'paypal-team@gmail.com'
  }
-*/
 }  
