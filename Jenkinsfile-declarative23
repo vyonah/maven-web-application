@@ -9,7 +9,7 @@ pipeline{
     stage('1clone'){
       steps{
         sh "echo ready to automate build"
-        git 'https://github.com/LandmakTechnology/maven-web-application'
+        git 'https://github.com/kobby2024/maven-web-application'
         sh "echo latest application version collected from SCM"
       }   
     }
@@ -36,7 +36,7 @@ pipeline{
     }
     stage('5deployment'){
       steps{
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.166.85.32:8177/')], contextPath: null, war: 'target/*war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
         sh "echo deployment to production completed successfully"
       }       
     }
@@ -45,19 +45,19 @@ pipeline{
     failure{
          emailext body: '''Hi Team,
 Build failed
-Landmark Technologies''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
+Devops Xpress''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
 
     }
     success{
          emailext body: '''Hi Team,
 Build succeeded
-Landmark Technologies''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
+DevOps Xpress''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
 
     }
     always{
          emailext body: '''Hi Team,
 Build status
-Landmark Technologies''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
+DevOps Xpress''', recipientProviders: [developers(), contributor()], subject: 'build status', to: 'developers'
 
     }
   }
