@@ -20,7 +20,7 @@ node{
     }
     stage('5.Deploy2UAT'){
         //use deploy-to-container plugin via pipeline syntax
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://34.219.51.216:8177/')], contextPath: null, war: 'target/*war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
         //Deploying [/var/lib/jenkins/workspace/tesla-app-pipeline/target/tesla.war]
     }
     stage('6.6ManualApproval'){
@@ -31,7 +31,7 @@ node{
     }
     stage('7.Deploy2Prod'){
       sh "echo 'Deploy application to the customers/production' " 
-     deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://34.219.51.216:8177/')], contextPath: null, war: 'target/*war'
+     deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://192.168.28.3:8080/')], contextPath: null, war: 'target/*war'
          
     }
     stage('8.APM'){
@@ -48,7 +48,7 @@ node{
 The build and Deployment status for tesla-app follows.
 
 Regards,
-Landmark Technologies ''', recipientProviders: [buildUser(), contributor(), developers(), requestor()], subject: 'build and deployment status', to: 'mylandmarktech@gmail.com'
+Devops Xpress ''', recipientProviders: [buildUser(), contributor(), developers(), requestor()], subject: 'build and deployment status', to: 'mylandmarktech@gmail.com'
 
     }
 }
