@@ -13,7 +13,7 @@
 	We offer Training for DevOps with Linux, Kubernetes and Cloud, equipping IT Engineers for the best performance.
         With DevOps Xpress we take our time to train
 	DevOps MasterClass ongoing June 15th 2024.
-        Please invite all your contacts and friends. signed kobby2024
+        Please invite all your contacts and friends. kobby2024 signed.
 </h1>
 <hr>
 <br>
