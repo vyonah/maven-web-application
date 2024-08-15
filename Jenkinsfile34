@@ -20,7 +20,7 @@ node{
   }
   stage('6.ManualApproval'){
     sh " echo 'Please review & approve' "
-    timeout(time:300, unit:'MINUTES')
+    timeout(time:200, unit:'MINUTES')
     {
       input message: 'Application ready for deployment, Please review and approve'
     }
