@@ -8,12 +8,6 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to DevOps Xpress Master Class 2024.</h1>
-<h1 align="center">We are developing and supporting quality Software Solutions to millions of clients globally.
-	We offer Training for DevOps Engineers with Linux, Kubernetes and Cloud, equipping IT Engineers for the best performance.
-        With DevOps Xpress we take our time to train and equip engineers.
-	DevOps MasterClass ongoing June 2024. Be in class on time.
-        Please invite all your contacts and friends. kofi Good 2024 signed.
 </h1>
 <hr>
 <br>
