@@ -14,7 +14,7 @@ node{
     sh "${mavenHome}/bin/mvn deploy"
   }
   stage('5.deploy2UAT'){
-    //use deploy to container plugin
+    use deploy to container plugin
     deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://http://34.205.141.28:8088/')], contextPath: null, war: 'target/*war'
  }
   stage('6.ManualApproval'){
@@ -25,7 +25,7 @@ node{
     }       
   }
   stage('7.deploy2prod'){
-    //use deploy to container plugin
+    use deploy to container plugin
     deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://http://34.205.141.28:8088/')], contextPath: null, war: 'target/*war'    
   }
 
@@ -35,7 +35,7 @@ node{
   }
   stage('9.notification'){
     sh "echo create email notification to resolve any issue that may arise"
-    //use pipeline syntax and email notification plugin to achieve this  
+    use pipeline syntax and email notification plugin to achieve this  
     emailext body: '''The build and Deployment status for tesla-webapp.
 
 Regards,
