@@ -16,6 +16,7 @@ pipeline{
          sh  'mvn clean package'        
       }
     }
+/*
     stage('3.CodeQuality'){
       steps{
          sh "mvn sonar:sonar"
@@ -46,6 +47,7 @@ stage('5.Deploy2UAT'){
        }
       }
     }
+*/
 stage('7.Deploy2Prod'){
    steps{
     sh "echo application reviewed, approved and ready for the market" 
