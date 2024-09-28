@@ -1,45 +1,57 @@
-pipeline({
-agent any
-node{
-  def mavenHome = tool name: 'maven3.9.9'
-  stage('1.GitClone'){
-   git " https://github.com/vyonah/maven-web-application"
-}
-  stage('2.mavenBuild'){
-    sh "${mavenHome}/bin/mvn package"
+pipeline{
+  agent any    
+  tools{
+    maven 'maven3.9.9'
   }
-  stage('3.sonaqubeQuality'){
-    sh "${mavenHome}/bin/mvn sonar:sonar"
-  }
-  stage('4.UploadArtifacts'){
-    //sh "${mavenHome}/bin/mvn deploy"
-    sh "echo The build and release job is ended"
-  }
-  stage('5.deploy2UAT'){
-    sh "echo deployment launched using deploy2container plugin"
-deploy adapters: [tomcat9(credentialsId: 'tomcat credentials1', path: '', url: 'http://34.205.141.28:8088/')], contextPath: null, war: 'target/*war'
-  }
-  stage('6.ManualApproval'){
-    sh " echo 'Please review & approve' "
-    timeout(time:3, unit:'HOURS')  
-    {
-    input message: 'Application ready for deployment, Please review and approve'
+  stages{
+    stage('1.GitClone'){
+      steps{
+         sh  "echo cloning the latest app version"
+         git 'https://github.com/vyonah/maven-web-application'        
+      }
+    } 
+    stage('2.mavenbuild'){
+      steps{
+         sh  "echo creating deployable packages"
+         sh  'mvn clean package'        
+      }
+    }
+    stage('3.CodeQuality'){
+      steps{
+         sh "mvn sonar:sonar"
+         sh "echo CodeQualityAnalysis completed"          
+      }
+    } 
+    stage('4.UploadArtifacts'){
+      steps{
+          sh "mvn deploy" 
+          sh "echo artifacts uploaded successfully"
+          sh "echo I am now a Build and Release Engineer"
+          sh "echo Build and release completed"         
+      }
+    }
+stage('5.Deploy2UAT'){
+    steps{
+      sh "echo Deployment is ready for the client review"
+      sh "echo using deploy to container plugin" 
+      }
     }  
- }
- stage('7.deploy2prod'){
-    sh "echo deployment launched to production"
-deploy adapters: [tomcat9(credentialsId: 'tomcat credentials1', path: '', url: 'http://34.205.141.28:8088/')], contextPath: null, war: 'target/*war'
- }
-stage('8.apm'){
-    sh "echo 'monitoring, observation and alerting' "
-    sh "echo 'application performance Monitoring in progress' "
+  stage('6approval'){
+    steps{
+      sh "echo Deployment is ready for the client review"
+      sh "echo using deploy to container plugin" 
+      echo "ready for inspection"
+       timeout(time:5, unit:'DAYS'){
+       input message: 'Application ready for deployment, Please review and approve'     
+       }
+      }
+    }
+stage('7.Deploy2Prod'){
+   steps{
+    sh "echo application reviewed, approved and ready for the market" 
+    emailext body: 'Hello Review and approve.   ', subject: 'success', to: 'leitichvyonah@gmail.com'
+    }
 }
-  stage('9.notification'){
-        emailext body: '''The build and Deployment status for tesla-webapp.
-
-Regards,
-Vyonah Leitich''', recipientProviders: [developers(), upstreamDevelopers(), buildUser()], subject: 'job status', to: 'leitichvyonah@gmail.com'
-
   }
- }
+
 }
